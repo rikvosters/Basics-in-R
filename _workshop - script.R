@@ -102,7 +102,7 @@ rm(list=ls(all=TRUE))
 
 # set working directory
 setwd("")
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2020.05 DSh workshop - Basics in R/shared folder")
+setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2020.05 DSh workshop - Basics in R/Basics-in-R")
 getwd()
 # Windows: setwd(choose.dir())
 # Linux: tk_choose.files() does same thing - library(tcltk)
@@ -111,11 +111,16 @@ getwd()
 
 # Working with packages 
 
-# install.packages("stylo")
+# first, once:
+install.packages("stylo")
+
+# then, every session before using it or at the beginning of the script:
 library(stylo)
+
+# want to know more about the package?
 help(package=stylo) # or write in 'Help' window
 
-# install.packages("tidyverse")
+install.packages("tidyverse") # once
 library(tidyverse)
 
 # alternatively:
@@ -419,7 +424,7 @@ head(OE,3) # specify number of rows
 # Type 1: CSV - comma-separated (text) files
 
 # be sure to set the working directory (or give a full path)
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2020.05 DSh workshop - Basics in R/shared folder")
+setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2020.05 DSh workshop - Basics in R/Basics-in-R")
 
 # load
 shark <- read.csv("SharkAttacks_sample.csv") # based on: https://data.world/shruti-prabhu/shark-attacks
@@ -428,56 +433,79 @@ head(shark)
 # options:
 read.csv("SharkAttacks_sample.csv", header = T, sep = ",", encoding = "UTF-8", strip.white = T, dec = ".")
 
+# separator value = often '\t' (tab-delimited)
+# also: read.delim() instead of read.csv
+
 # alternative: 
 # - Import tool in RStudio:
 #   `File` > `Import dataset` > `From Text (base)`
 
 # Type 2: Internet files with a specific URL
 
-shark <- read.csv("https://www.dropbox.com/s/campo5phtsfb3sj/SharkAttacks_sample.csv") # no need to set working directory
+shark <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/SharkAttacks_sample.csv") # no need to set working directory
 head(shark)
-
 
 # Type 3: Excel spreadsheets
 
+library(readxl)  # first (just once): install.packages(readxl)
+read_excel("SharkAttacks.xlsx")
+# loads it as special type of dataframe: tibble (cf. infra)
+
+# Type 4: R package
+
+# some data is just available in a ready-made R package
+# e.g. baby names
+library(babynames) # first (just once): install.packages(babynames)
+my_dataframe_babies <- babynames
+my_dataframe_babies # also tibble
 
 
+####--- | exercise: LEGO ---####
 
-# 
+Load
 
+# load data (offline)
+lego <- read.csv("LEGOsets.csv")
 
+# load data (online)
+lego <- read.csv("LEGOsets.csv")
 
-# Method 1: Spreadsheets as txt 
+# first six rows
+head(lego)
 
-# Excel: File > Save as... > Tab separated text (instead of .xlsx)
-# each column in Excel is a tab (\t) in R
-OE <- read.csv("OE.txt", sep="\t")
-OE
-
-# you can also specify where to find the file:
-read.csv("C:/Users/rikvosters/Desktop/OE.txt", sep="\t") # Windows
-# or:
-read.csv("~/Desktop/OE.txt", sep="\t") # Mac
-
-# alternative: `read.table()`
-?read.table()
-?read.csv()
+# histogram
+hist(lego$year)
 
 
-# Method 2: Spreadsheet directly 
+####--- | exercise: catholic fertility ---####
 
-# install.packages("xlsx")
+# Install and load the package called 'datasets'. This package contains a dataset called 'swiss', which contains Swiss fertility and socioeconomic indicators from the year 1888. Save this dataset in your working environment as a new dataframe called 'helvetica', and explore it by looking at the first 10 rows. Now extract the rows only for those districts where more than 50% of the population is catholic, and calculate the mean fertility rate for these predominantly catholic districts. Now compare it to the mean fertility rate of districts with 50% of catholics or less.
 
-library(xlsx)
+####--- | solution: catholic fertility ---####
 
-OE2 <- read.xlsx("OE.xlsx", sheetIndex=1) # notice: ption (`sheetIndex=1`)
-# see ?read.xlsx() for more options
-OE2
+# install and load
+library(datasets) # once: install.packages("datasets")
+
+# save as new df
+helvetica <- swiss
+
+# first ten rows
+head(helvetica, 10)
+
+# rows for districts where Catholic > 50
+helvetica[helvetica$Catholic > 50,]
+
+# mean fertility rate in these catholic districts compared to districts with Catholic <= 50
+mean(helvetica[helvetica$Catholic > 50,]$Fertility)
+mean(helvetica[helvetica$Catholic <= 50,]$Fertility)
+
+# alternative - new dataframe based on subset:
+helvetica_catolica <- helvetica[helvetica$Catholic > 50,]
+helvetica_heretica <- helvetica[helvetica$Catholic <= 50,]
+mean(helvetica_catolica$Fertility)
+mean(helvetica_heretica$Fertility)
 
 
-# Method 3: import tool in RStudio 
-
-# `File` > `Import dataset` > …
 
 
 
