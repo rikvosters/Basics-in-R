@@ -755,7 +755,7 @@ sample_list[[2]][1]
 
 # New dataset: Dogs of Zuerich (https://www.kaggle.com/kmader/dogs-of-zurich)
 # Data about Dog Owners in Zuerich, Switzerland
-dog <- read.csv("DogsOfZuerich.csv", sep=";")
+dog <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv", sep=";")
 head(dog)
 
 ### 4.1 Data classes -----
@@ -767,8 +767,8 @@ class(names)
 class(dog)
 
 # also on columns in dataframes
-class(dog$DOG_BIRTHYEAR)
-class(dog$DOG_COLOR)
+class(dog$BIRTHYEAR)
+class(dog$COLOR)
 
 # character versus factor
 dog$OWNER_SEX <- as.factor(dog$OWNER_SEX)
@@ -792,8 +792,9 @@ barplot(table(dog$OWNER_SEX))
 
 # automatically reorder factor levels
 
+
 head(dog)
-dog$
+dog$BREED
 levels(shark$Country)
 shark$Country <- fct_reorder(shark$Country, df$a, min)
 
