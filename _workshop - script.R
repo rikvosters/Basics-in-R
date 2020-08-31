@@ -970,14 +970,26 @@ bb_nn %>%
 
 ### 4.4  Merging datasets and working with metadata -----
 
+# Let's go back to our negation data. This dataset contains an entry for each linguistic expression of negation in a corpus of early 19th century Flemish soldiers' letters. Negation either occur with a 'Single' negator, or as 'Bipartite' negation (i.e. with two negators). However, there is metadata available in a separate file, linked to each of the soldiers' letters in the dataset. We want to add this to the existing data.
 
+neg <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv")
+head(neg)
 
+# load metadata from separate file
+meta <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation_metadata.csv")
+head(meta)
 
+# compare:
+head(neg); head(meta) # look for shared identifier (here: Letter)
 
-### EXC: wide to long + merge 
+# merge
+neg <- merge(neg, meta, by="Letter") # first the two elements which to merge, then by="" (= the column used for merging)
 
+# check
+head(neg) # success!
 
 ### 4.5  Loading multiple files (loops and lapply)-----
+
 # loop
 # alternative: 
 files <- list.files(pattern = "file_.*csv")
@@ -985,6 +997,16 @@ df_list <- lapply(files, read_csv)
 df <- bind_rows(df_list)
 
 
+
+### EXC: wide to long + merge + loop
+
+####--- | exercise:  ---####
+
+####--- | solution:  ---####
+
+####--- | exercise:  ---####
+
+####--- | solution:  ---####
 
 
 
