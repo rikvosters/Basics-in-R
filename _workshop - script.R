@@ -518,6 +518,18 @@ helvetica_heretica <- helvetica[helvetica$Catholic <= 50,]
 mean(helvetica_catolica$Fertility)
 mean(helvetica_heretica$Fertility)
 
+
+####--- | exercise: negation ---####
+
+# Load a dataset called 'negation.csv' (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv). It contains an entry for each linguistic expression of negation in a corpus of early 19th century Flemish soldiers' letters. Negation either occur with a 'Single' negator, or as 'Bipartite' negation (i.e. with two negators). Try to find out if this happens more in main clauses with a SVO word order (Subject-Verb-Object), compared to subclauses, with a SOV order (Subject-Object-Verb).
+
+# load
+neg <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv", quote = "", encoding = "UTF-8")
+neg
+
+####--- | solution: negation ---####
+
+
 ### 3.4 An alternative approach: tidyverse/dplyr -----
 
 # new kid on the block: tidyverse (tidyverse.org)
