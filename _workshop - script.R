@@ -990,24 +990,89 @@ head(neg) # success!
 
 ### 4.5  Loading multiple files (loops and lapply)-----
 
-# loop
-# alternative: 
-files <- list.files(pattern = "file_.*csv")
-df_list <- lapply(files, read_csv)
-df <- bind_rows(df_list)
+# loops: easy way to automate repetitive tasks
 
+# loops have the following structure
+for (i in 1:total_iterations) {   # we define a counter 'i', and 
+  # define that it will run from 1 to
+  # the total number of iterations
+  functions       # functions in the loop 
+  # will be performed i times
+}
+
+# one example
+for (i in 1:50) {     # define counter 'i' and iterate from 1 till 20
+  # function cat() (= print on screen) will run for 20 times
+  # with the element i in it
+  cat("This is iteration number", i, "\n", sep=" ") # 'cat()' is similar to 'print'
+}
+
+####--- | exercise: multiplication tables ---#####
+
+# Use a for-loop that will generate the result of the multiplication tables of 7 (i.e. 7x1=7, 7x2=14, 7x3=21, …, 7x50=350). First set a counter which is the number (going from 1 to 50) you use to multiply with 7, and then calculate a variable x with the result of the multiplication. Show each result for 'x' on your screen using the 'print()' function.
+
+####--- | solution: multiplication tables ---#####
+
+for (i in 1:50) {  # set counter i
+  x <- 7 * i       # define x als result of 7 x i
+  print(x)         # show result on screen
+}
+
+# loop to load various files
+
+# as a preparation: define names of data files in a vector called data.files
+data.files <- list.files(pattern="text_loop")
+# any file in the working directory with " " in its name
+# often you can use: pattern="txt"
+data.files
+
+# also, already created an empty character vector into which the whole data file will be loaded
+data <- data.frame()
+
+# start the loop
+for (i in 1:length(data.files)) {   # iterate over file names 
+  # read in corpus file as lower case and save it in current.file
+  current.file <- read.csv(data.files[i])
+  # append the current.file to the rest
+  data <- rbind(data, current.file)
+}
+
+data
+
+
+# alternative: 
+files <- list.files(pattern = "text_loop")
+df_list <- lapply(files, read.csv)
+df <- bind_rows(df_list)
+df
 
 
 ### EXC: wide to long + merge + loop
 
 ####--- | exercise:  ---####
 
+
+
+####--- | solution: presidential frequency tables ---####
+
+
+####--- | exercise: presidential frequency tables ---####
+
+# Write a loop to load all (two) data files that start with the word 'freqtabel', which contains the inaugural addresses of the last two US presidents. Bind them together with 'rbind()' into one dataframe. Then use the filter() function to check how often the word 'america' occurs in each one. 
+
 ####--- | solution:  ---####
 
-####--- | exercise:  ---####
+data.files <- list.files(pattern="freqtabel"); data.files
+data <- data.frame()
+for (i in 1:length(data.files)) {
+  current.file <- read.csv(data.files[i])
+  data <- rbind(data, current.file)
+}
+data
 
-####--- | solution:  ---####
-
+# filter out frequencies of 'America'
+data %>% 
+  filter(Token == "america")
 
 
 
