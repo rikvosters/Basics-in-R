@@ -755,7 +755,7 @@ sample_list[[2]][1]
 
 # New dataset: Dogs of Zuerich (https://www.kaggle.com/kmader/dogs-of-zurich)
 # Data about Dog Owners in Zuerich, Switzerland
-dog <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv", sep=";")
+dog <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv", sep=";", na.strings = "")
 head(dog)
 
 ### 4.1 Data classes -----
@@ -783,33 +783,53 @@ barplot(table(dog$OWNER_SEX))
 
 ### 4.2 Basic manipulations -----
 
-# reorder factor levels
+# reorder factor levels: fct_relevel()
 
 levels(dog$OWNER_SEX)
 dog$OWNER_SEX <- factor(dog$OWNER_SEX, levels = c("w", "m"))
 levels(dog$OWNER_SEX)
 barplot(table(dog$OWNER_SEX))
 
-# automatically reorder factor levels
+# alternative (even easier):
+fct_relevel(dog$OWNER_SEX, "w", "m")
+fct_relevel(dog$OWNER_SEX, "w")
 
+# rename factor levels: fct_recode()
 
-head(dog)
-dog$BREED
-levels(shark$Country)
-shark$Country <- fct_reorder(shark$Country, df$a, min)
+dog$OWNER_SEX <- fct_recode(dog$OWNER_SEX, "female" = "w", "male" = "m") # new = old
+dog$OWNER_SEX
 
+dog$OWNER_AGE <- as.factor(dog$OWNER_AGE)
+levels(dog$OWNER_AGE) # problem: Excell made '11-20' into '44136' (thinking it was a date)
+dog$OWNER_AGE <- fct_recode(dog$OWNER_AGE, "11-20" = "44136")
+levels(dog$OWNER_AGE) # solved (but reorder needed!)
+dog$OWNER_AGE <- fct_relevel(dog$OWNER_AGE, "11-20") # no need to list the rest
+levels(dog$OWNER_AGE)
 
-# rename factor levels
+# replace text: gsub()
 
-dog$DOG_SEX
-dog$DOG_SEX <- fct_recode(dog$DOG_SEX, "male" = "M", "female" = "F") # new = old
-dog$DOG_SEX
+class(dog$BREED)
+table(dog$BREED)
+dog$BREED <- gsub("Zwerg", "Miniature ", dog$BREED)
+table(dog$BREED)
+
+# transform data
+table(dog$BIRTHYEAR)
 
 # order
 # transform
-# replace / numeric and gsub
 # delete (rows and columns)
 # mutate
+
+# EXERCISE
+# ('K' stands for 'Kleinwüchsig', 'I' stands for 'Rassentypenliste I' and 'II' stands for 'Rassentypenliste II')
+dog$TYPE_BREED <- as.factor(dog$TYPE_BREED)
+levels(dog$TYPE_BREED)
+dog$SIZE <- fct_recode(dog$TYPE_BREED, "Small" = "K", "Large" = "I", "Large" = "II")
+dog$SIZE <- fct_relevel(dog$SIZE, "Small")
+table(dog$SIZE)
+
+
 ### 4.3 Long and wide data -----
 ### 4.4  Merging datasets -----
 ### 4.5  Loading multiple files (loops and lapply)-----
