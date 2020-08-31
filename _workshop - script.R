@@ -541,7 +541,7 @@ mean(helvetica_heretica$Fertility)
 ### 3.4 An alternative approach: tidyverse/dplyr -----
 
 # new kid on the block: tidyverse (tidyverse.org)
-# popular set of packages (dplyr, ggplot, tidyr, … )
+# popular set of packages (dplyr, ggplot, tidyr, ... )
 # easier to get started, but harder for some things
 # 'tidy' data:
 #    1. each column is a variable
@@ -918,7 +918,65 @@ dog %>%
   head(1)
 
 ### 4.3 Long and wide data -----
-### 4.4  Merging datasets -----
+
+# 1. Wide to long 
+
+# let's load a new data set, with population data of some countries from 1960 to 2015
+pop <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/world_population_wide.csv", sep=",", 
+                check.names = F)
+pop <- tibble(pop)
+
+# we need another package from the Tidyverse, which is not part of the main 'tidyverse' library
+library(tidyr) # once: install.packages("tidyr")
+
+# currently in wide format
+pop
+
+# what we want and need for some applications (e.g. plots in ggplot) is a long data format:
+# three columns: Country, Year and Population
+# so that we can e.g. filter(Year == ...) (which is now not possible, as these are columns and not rows)
+
+pop %>% 
+  pivot_longer(cols = `1960`:`2015`, names_to = "Year", values_to = "Population") -> popl
+
+popl$Year <- as.numeric(popl$Year)
+popl
+
+# now easy filtering....
+popl %>% 
+  filter(Year == 2000)
+
+# ... and easy plotting (cf. later)
+
+popl %>% 
+  filter(Country %in% c("China", "India", "United States", "Serbia", "United Kingdom")) %>% 
+  ggplot(aes(x = Year, y = Population, col = Country)) + 
+  geom_line()
+
+# 2. Long to wide
+
+# sometimes useful for easier/more visual summary
+
+bb <- babynames
+bb %>% 
+  filter(name %in% c("Izzy", "Ricky", "Archie", "Eli", "Leo", "Freddy", "Tony", "Randy", "Frankie", "Rudy")) %>% 
+  filter(year >= 2010) %>% 
+  filter(sex == "M") %>% 
+  select(year, name, n) -> bb_nn
+bb_nn # long
+
+bb_nn %>% 
+  pivot_wider(names_from = name, values_from = n) # wide
+
+### 4.4  Merging datasets and working with metadata -----
+
+
+
+
+
+### EXC: long to wide and vice versa merge
+
+
 ### 4.5  Loading multiple files (loops and lapply)-----
 # loop
 # alternative: 
@@ -1061,7 +1119,7 @@ sort(table(unlist(strsplit(corpus.file, " ")))) # idem, but sorted
     # cf. above
     table(unlist(strsplit(corpus.file, "")))
     
-    # Menu: 'Code' > 'Extract function'…
+    # Menu: 'Code' > 'Extract function'...
 
     charlist <- function (text) {
       table(unlist(strsplit(text, "")))
