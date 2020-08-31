@@ -438,7 +438,7 @@ shark <- read.csv("SharkAttacks_sample.csv") # based on: https://data.world/shru
 head(shark)
 
 # options:
-read.csv("SharkAttacks_sample.csv", header = T, sep = ",", encoding = "UTF-8", strip.white = T, dec = ".")
+read.csv("SharkAttacks_sample.csv", header = T, sep = ",", na.strings = "", encoding = "UTF-8", strip.white = T, dec = ".")
 
 # separator value = often '\t' (tab-delimited)
 # also: read.delim() instead of read.csv
@@ -806,6 +806,22 @@ levels(dog$OWNER_AGE) # solved (but reorder needed!)
 dog$OWNER_AGE <- fct_relevel(dog$OWNER_AGE, "11-20") # no need to list the rest
 levels(dog$OWNER_AGE)
 
+# make infrequent values into 'other': fct_lump()
+
+# several possibilities:
+# fct_lump_n() # lump all except n most frequent items
+# fct_lump_min() # lump all items that appear less than min times
+
+sort(table(dog$BREED), decreasing = T) # sorted frequency table
+
+# fct_lump_n
+dog$BREED_rcd <- fct_lump_n(dog$BREED, n=15)
+sort(table(dog$BREED_rcd), decreasing = T)
+
+# fct_lump_min
+dog$BREED_rcd <- fct_lump_min(dog$BREED, min = 50)
+sort(table(dog$BREED_rcd), decreasing = T)
+
 # replace text: gsub()
 
 class(dog$BREED)
@@ -813,22 +829,93 @@ table(dog$BREED)
 dog$BREED <- gsub("Zwerg", "Miniature ", dog$BREED)
 table(dog$BREED)
 
-# transform data
+# transform data: mutate()
+
 table(dog$BIRTHYEAR)
+dog %>% 
+  mutate(AGE = 2016-dog$BIRTHYEAR) -> dog
+table(dog$AGE)
 
-# order
-# transform
-# delete (rows and columns)
-# mutate
+table(dog$BIRTHYEAR)
+dog$AGE <- 2016-dog$BIRTHYEAR
+table(dog$AGE) # dogs 36 and 54 years old ≠ possible!
 
-# EXERCISE
-# ('K' stands for 'Kleinwüchsig', 'I' stands for 'Rassentypenliste I' and 'II' stands for 'Rassentypenliste II')
+# remove outliers: filter()
+
+dog %>% 
+  filter(AGE < 30) -> dog
+table(dog$AGE) 
+hist(dog$AGE)
+
+# reorder rows: arrange()
+
+head(dog) # order by dog age instead of ID
+dog %>% 
+  arrange(AGE) -> god
+head(dog)
+
+# change column names: rename()
+
+dog %>% 
+  rename(OWNER_GENDER = OWNER_SEX) -> dog
+head(dog)
+
+# change column order: relocate()
+
+dog %>% 
+  relocate(AGE) -> dog # AGE to the left
+head(dog)
+
+dog %>% 
+  relocate(ID) -> dog # ID back to the left
+head(dog)
+
+dog %>% 
+  relocate(AGE, .after = BIRTHYEAR) -> dog # age to the right of birthyear
+head(dog)
+
+####--- | exercise: dogs of Zuerich ---####
+
+# Reload the Dogs of Zuerich csv file (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv).Recode the 'TYPE_BREED' variable into a new 'SIZE' variable. 'K' stands for 'Kleinwüchsig' and represents small dogs, while 'I' and 'II' stand for 'Rassentypenliste I' and 'II', representing larger dogs. Check the proportion of small versus large dogs in Zurich, and check if women are more likely to have small dogs than men. Finally, if you have to buy a dog for your 85 year old grandmother, what specific breed would have the highest probability of her liking it, given her age and gender?
+
+####--- | solution: dogs of Zuerich ---####
+
+# reload
+dog <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv", sep=";", na.strings = "")
+
+# recode
 dog$TYPE_BREED <- as.factor(dog$TYPE_BREED)
 levels(dog$TYPE_BREED)
 dog$SIZE <- fct_recode(dog$TYPE_BREED, "Small" = "K", "Large" = "I", "Large" = "II")
 dog$SIZE <- fct_relevel(dog$SIZE, "Small")
-table(dog$SIZE)
 
+# proportion
+table(dog$SIZE)
+4205/(4205+2601)*100
+# alternatives:
+table(dog$SIZE)[1]/(table(dog$SIZE)[1]+table(dog$SIZE)[2])*100
+prop.table(table(dog$SIZE))
+
+# comparison women v men
+table(dog$SIZE[dog$OWNER_SEX=="w"])
+3037/(3037+1611)*100
+table(dog$SIZE[dog$OWNER_SEX=="m"])
+1168/(1168+990)*100 # men are less likely to have small dogs than women
+  # alternative:
+  prop.table(table(dog$SIZE[dog$OWNER_SEX=="w"]))
+  prop.table(table(dog$SIZE[dog$OWNER_SEX=="m"]))
+  
+# dog breed for 85 year old grandmother
+sort(table(dog$BREED[dog$OWNER_SEX == "w" & dog$OWNER_AGE == "81-90"]))
+
+# alternative tidyverse/dplyr
+dog %>% 
+  filter(OWNER_SEX == "w") %>% 
+  filter(OWNER_AGE == "81-90") %>% 
+  select(BREED) %>% 
+  table() %>% 
+  sort(decreasing = T) %>% 
+  head(1)
 
 ### 4.3 Long and wide data -----
 ### 4.4  Merging datasets -----
