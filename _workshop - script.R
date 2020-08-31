@@ -421,7 +421,7 @@ head(OE,3) # specify number of rows
 
 # Several methods, depending on format of source
 
-# Type 1: CSV - comma-separated (text) files
+# TYPE 1: CSV - comma-separated (text) files
 
 # be sure to set the working directory (or give a full path)
 setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2020.05 DSh workshop - Basics in R/Basics-in-R")
@@ -440,41 +440,49 @@ read.csv("SharkAttacks_sample.csv", header = T, sep = ",", encoding = "UTF-8", s
 # - Import tool in RStudio:
 #   `File` > `Import dataset` > `From Text (base)`
 
-# Type 2: Internet files with a specific URL
+# TYPE 2: Internet files with a specific URL
 
 shark <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/SharkAttacks_sample.csv") # no need to set working directory
 head(shark)
 
-# Type 3: Excel spreadsheets
+# TYPE 3: Excel spreadsheets
 
 library(readxl)  # first (just once): install.packages(readxl)
 read_excel("SharkAttacks.xlsx")
 # loads it as special type of dataframe: tibble (cf. infra)
 
-# Type 4: R package
+# TYPE 4: R package
 
 # some data is just available in a ready-made R package
 # e.g. baby names
 library(babynames) # first (just once): install.packages(babynames)
-my_dataframe_babies <- babynames
-my_dataframe_babies # also tibble
+bb <- babynames
+bb # also tibble
 
 
 ####--- | exercise: LEGO ---####
 
-Load
+# Load a dataset called 'LEGOsets.csv', which contains an overview of all official LEGO sets (source: https://www.kaggle.com/rtatman/lego-database). You can either load it from the workshop folder, or from an online url (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/LEGOsets.csv). Explore the first six rows of the dataframe. Then make a histogram of the variable 'year', to see how many sets were released each year. Next, check with a function when the first official set was released. Finally, extract the names of all LEGO sets released in 1955.
+
+####--- | solution: LEGO ---####
 
 # load data (offline)
 lego <- read.csv("LEGOsets.csv")
 
 # load data (online)
-lego <- read.csv("LEGOsets.csv")
+lego <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/LEGOsets.csv")
 
 # first six rows
 head(lego)
 
 # histogram
 hist(lego$year)
+
+# first
+min(lego$year)
+
+# names in 1955
+lego$name[lego$year == 1955]
 
 
 ####--- | exercise: catholic fertility ---####
@@ -506,30 +514,128 @@ mean(helvetica_catolica$Fertility)
 mean(helvetica_heretica$Fertility)
 
 
+### 2.5 An alternative approach: tidyverse -----
 
+# new kid on the block: tidyverse (tidyverse.org)
+# popular set of packages (dplyr, ggplot, tidyr, … )
+# easier to get started, but harder for some things
+# 'tidy' data:
+#    1. each column is a variable
+#    2. each row is an observation
 
+library(tidyverse)
 
+# Some innovations:
 
-# alternative: dplyr/tidyverse
+# 1. Tibbles instead of dataframes
+bb <- babynames
+bb
 
-library(tidyverse) # New and popular set of packages (dplyr, ggplot, … )
-# Easier to get started, but harder for some things
+# faster and easier to work with; always prints 10 cases and as many columns as fit on screen
+# to see more:
+print(bb, n = 50)
 
-# pipe character %>%: sequential code rather than embedded functions (CMD + shift + M)
+# possible to make a dataframe into a tibble:
+OE_tibble <- tibble(OE)
+OE_tibble
+
+# and back
+OE <- data.frame(OE_tibble)
+OE
+
+# 2. Pipe character %>%
+
+# for sequential code rather than embedded functions (CMD + shift + M)
 
 wordcounts %>% sort() %>% plot()
 # is the same as:
 plot(sort(wordcounts))
 
-# filter()
+round(mean(babynames$n))
+# is the same as:
+babynames$n %>% 
+  mean() %>% 
+  round()
 
-wordcounts %>% 
-  filter(wordcounts >200)
+# 3. 'Plying' your data (dplyr)
 
-# TIBBLE!!!
+# filter(): similar to subsetting, selecting cases (rows) based on their values
+
+babynames %>% 
+  filter(name == "Dwight")
+
+babynames %>% 
+  filter(name == "Dwight") %>% 
+  filter(sex == "M") 
+
+# often serves as input for a plot (ggplot: see later)
+babynames %>% 
+  filter(name == "Dwight") %>% 
+  filter(sex == "M") %>% 
+  ggplot(aes(x = year, y = prop)) +
+  geom_line()
+
+# possibility to match more flexibly (e.g. regular expressions)
+
+babynames %>% 
+  filter(str_detect(name, "Adol")) %>% 
+  filter(sex == "F")
+
+# mutate(): add new variables (columns)
+
+babynames %>% 
+  mutate(prop_overall = n/sum(n))
+
+babynames %>% 
+  mutate(name_gendered = paste0(name, "_", sex))
+
+# to save new/modified tibble:
+
+babynames %>% 
+  mutate(prop_overall = n/sum(n)) -> babynames
+
+# select(): select variables (columns)
+
+babynames %>% 
+  select(year, sex, name)
+
+# arrange(): change order of cases (rows)
+
+babynames %>% 
+  filter(year == 1950) %>% 
+  arrange(name, sex)
+
+babynames %>% 
+  filter(year == 1950) %>% 
+  arrange(desc(name), sex)
+
+# combine multiple dplyr functions
+
+# most popular boy's names in 1945
+babynames %>% 
+  filter(year == 1945) %>% 
+  filter(sex == "M") %>% 
+  arrange(desc(prop))
+
+# popularity of name 'Adolf' 
+babynames %>% 
+  filter(name == "Adolf") %>% 
+  filter(sex == "M") %>% 
+  ggplot(aes(x = year, y = prop)) +
+  geom_line() +
+  geom_vline(xintercept = 1940, color="red")
+
+# LATER •
+# summarise(): make summary of data
+# group_by(): 
+# ggplot()
+
+####--- | exercise: present participles ---####
 
 
-#### 2.4 Other types of data structures ####
+
+
+### 2.4 Other types of data structures -----
 
 ## matrix 
 matrix(1:20, nrow=5,ncol=4)
@@ -543,29 +649,8 @@ data.frame(names, hobbit, age)
 
 list(names, hobbit, age)
 
-####--- | exercise: present participles ---####
 
-### Make separate vectors out of the following data:
-# Scribes: "Leplae_PJ", "Druwe_F", "De_Brunne_C", "De_Vos_H", "Van_De_Wiele_J", "Landerij_EA", "Plancquel_PJ", "Wijsuer_J", "Malfait_F", "Tuittens_P", "Soenen_E", "Vandenberche_F", "Calleevaart_JF", "Marke_J", "Bruu_P", "Pinson_F", "Gevaert_L", "Van_Den_Briele_J", "De_Jonge_J", "Vermuilen_C", "Landuit_J", "Barts_A", "Van_Coilje_L", "De_Seijne_J", "Bonte_BC", "Spotbeen_P", "Dobbels_J", "Taveiren_J", "Mortier_F", "Malfait_J", "Narauw_J", "Crombeecke_J", "Coucke_PJ", "Vanderstraete_I"
-# Raw frequencies of Present Participle use:   1, 10, 0, 2, 1, 0, 0, 2, 2, 2, 0, 0, 1, 2, 4, 1, 3, 4, 5, 3, 4, 5, 3, 6, 4, 5, 5, 3, 4, 3, 3, 2, 3, 3 
-# Word counts per scribe
-# 254, 1245, 217, 1089, 670, 406, 619, 334, 217, 523, 684, 192, 290, 284, 718, 329, 321, 1441, 294, 277, 153, 678, 230, 368, 446, 604, 605, 532, 278, 374, 487, 396, 870, 263
-# Normalized frequencies of Present Participle use (per 1000 words):
-#   3.94, 8.03, 0, 1.84, 1.49, 0, 0, 5.99, 9.22, 3.82, 0, 0, 3.45, 7.04, 5.57, 3.04, 9.35, 2.78, 17.01, 10.83, 26.14, 7.37, 13.04, 16.3, 8.97, 8.28, 8.26, 5.64, 14.39, 8.02, 6.16, 5.05, 3.45, 11.41
-# Year of writing: 1706, 1738, 1823, 1777, 1687, 1777, 1837, 1753, 1777, 1706, 1767, 1823, 1829, 1709, 1823, 1785, 1823, 1701, 1767, 1706, 1823, 1823, 1709, 1823, 1823, 1829, 1706, 1709, 1709, 1777, 1688, 1777, 1769, 1777
 
-### Check to make sure that there are no scribes who are listed more than once, and convert all of their names to upper case. Also, do a quick check to see if all of the dates fall between 1650 and 1850.
-
-### Imagine that a problem in the compilation of the corpus has caused the samples written in the 1760s to be unreliably dated. Check to see if the vector with the years of writing includes any documents written during these years, and if so, replace those years of writing by the median year of writing of all of the other documents.
-
-### Combine these vectors into one dataframe and give each column an appropriate factor name.
-your.data.frame <- data.frame(vector1, vector2, vector3, etc) 
-names(your.data.frame) <- c("name1","name2","name3", "etc") 
-
-### Draw a histogram -- hist() -- of the normalized frequencies of Present Participle use per scribe, but only include the data of scribes for which we have at least 250 words in our sample.
-
-### Upon closer inspection of the corpus as a whole, the data from some scribes also seem to be unreliable: VERMUILEN_C, VAN_COILJE_L, MALFAIT_F, JOSSENS_F, HOUTEKEER_N, MALFAIT_J, WILLEMS_J. You are not sure, however, if these scribes contributed any tokens to the current data set on PresPart use. Make a stoplist of these unreliable scribes' names (so you can add more later if need be), and check the data you have against that stoplist. If any of the scribes did contribute data to the present dataframe, create a new dataframe with the entries from those scribes excluded.
- 
 
 ##### 3. LOADING A CORPUS FILE #####
 
