@@ -974,7 +974,7 @@ bb_nn %>%
 
 
 
-### EXC: long to wide and vice versa merge
+### EXC: wide to long + merge 
 
 
 ### 4.5  Loading multiple files (loops and lapply)-----
