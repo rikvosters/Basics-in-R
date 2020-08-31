@@ -167,7 +167,7 @@ sleep_weekend <- c(5,11)
 weekend_zzz <- mean(sleep_weekend) - mean(sleep_week)
 weekend_zzz
 
-### 2. DATA STRUCTURES -----
+### 2. BASIC VECTORS -----
 
 # Most important data structures:
   # Vectors: numeric, character, logical
@@ -333,6 +333,10 @@ sort(table(konami_code), decreasing=T) # sorted - basic frequency list!
 konami_missing <- c("up", NA, "down", "down", "left", "right", "left", "right", "B", "A", "start")
 table(konami_missing)
 
+# numeric values missing
+numbers <- c(1, 2, NA, 8, 12, NA, 36)
+mean(numbers)
+mean(numbers, na.rm = T)
 
 ####--- | exercise: Belgian Dutch words ---####
 
@@ -363,7 +367,9 @@ words_to_check <- c("beschaamd", "bisser", "boterkoek")
 words_to_check[words_to_check %in% belgicisms] # cf.: words_to_check %in% belgicisms
 
 
-### 2.3 Dataframes -----
+### 3. DATAFRAMES, SUBSETTING AND DATA IMPORT -----
+
+### 3.1 Data frames -----
 
 # A dataframe consists of different vectors of the same length
 col1 <- c("Aldrych", "Theobald", "Cadwell", "Ogden", "Roderick", "Rypley", "Marston", "Jimmy")
@@ -378,7 +384,9 @@ OE <- data.frame(col1, col2, col3, col4)
 names(OE) <- c("Scribe","Pronunciation","Reaction_time", "Verified") 
 OE # access entire dataframe
 
-## Subsetting: same logic, but two dimensions: [rows, columns]
+### 3.2 Subsetting -----
+
+# Subsetting: same logic, but two dimensions: [rows, columns]
 
 OE
 OE[1,] # first row of dataframe OE
@@ -416,8 +424,7 @@ OE[OE$Reaction_time > 25 & OE$Pronunciation == "/r/",]
 head(OE) # identical as OE[1:6,]
 head(OE,3) # specify number of rows
 
-
-### 2.4 Importing data -----
+### 3.3 Importing data -----
 
 # Several methods, depending on format of source
 
@@ -459,7 +466,6 @@ library(babynames) # first (just once): install.packages(babynames)
 bb <- babynames
 bb # also tibble
 
-
 ####--- | exercise: LEGO ---####
 
 # Load a dataset called 'LEGOsets.csv', which contains an overview of all official LEGO sets (source: https://www.kaggle.com/rtatman/lego-database). You can either load it from the workshop folder, or from an online url (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/LEGOsets.csv). Explore the first six rows of the dataframe. Then make a histogram of the variable 'year', to see how many sets were released each year. Next, check with a function when the first official set was released. Finally, extract the names of all LEGO sets released in 1955.
@@ -483,7 +489,6 @@ min(lego$year)
 
 # names in 1955
 lego$name[lego$year == 1955]
-
 
 ####--- | exercise: catholic fertility ---####
 
@@ -513,8 +518,7 @@ helvetica_heretica <- helvetica[helvetica$Catholic <= 50,]
 mean(helvetica_catolica$Fertility)
 mean(helvetica_heretica$Fertility)
 
-
-### 2.5 An alternative approach: tidyverse -----
+### 3.4 An alternative approach: tidyverse/dplyr -----
 
 # new kid on the block: tidyverse (tidyverse.org)
 # popular set of packages (dplyr, ggplot, tidyr, … )
@@ -625,29 +629,153 @@ babynames %>%
   geom_line() +
   geom_vline(xintercept = 1940, color="red")
 
+# tally(): check how many cases/rows left after filter (similar to length)
+
+babynames %>% 
+  filter(str_detect(name, "Adol")) %>% 
+  filter(sex == "F") %>% 
+  select(name) %>% 
+  unique()
+
+babynames %>% 
+  filter(str_detect(name, "Adol")) %>% 
+  filter(sex == "F") %>% 
+  select(name) %>% 
+  unique() %>% 
+  tally()
+
 # LATER •
 # summarise(): make summary of data
 # group_by(): 
 # ggplot()
 
-####--- | exercise: present participles ---####
+####--- | exercise: shark attacks ---####
 
+# Load and explore the data on shark attacks from the internet (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/SharkAttacks.csv). It is a tab separated file, so be sure to use the argument sep="\t". Also, it uses quotation marks in the text, so add the argument quote="". Browse through this dataset of almost 6000 documented shark attackes in history and try to answer the following questions, using either the base R package or tidyverse/dplyr:
+# - How many people died of a shark attack in 2017?
+# - Check if more shark attacks occurred in the 10 years before the movie Jaws came out in 1975, compared to 10 years after Jaws.
+# - How old was the oldest Australian every to die from a shark attack?
+# - Extract the names of all New Zealand victims of shark attacks in the 20th century, under the age of 16.
 
+####--- | solution: shark attacks ---####
 
+# load and explore
+shark <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/SharkAttacks.csv", sep="\t", quote="") 
+shark
 
-### 2.4 Other types of data structures -----
+# died of shark attack in 2017
+shark %>% 
+  filter(Year == 2017) %>% 
+  filter(Fatal == "Y") %>% 
+  tally()
 
-## matrix 
+  # base package alternative:
+  length(shark$Name[shark$Year == 2017 & shark$Fatal == "Y"])
+
+# check before and after Jaws (1975)
+shark %>% 
+  filter(Year < 1975 & Year > 1965) %>% 
+  tally()
+
+shark %>% 
+  filter(Year > 1975 & Year < 1985) %>% 
+  tally()
+
+  # base package alternative:
+  length(shark$Name[shark$Year < 1975 & shark$Year > 1965])
+  length(shark$Name[shark$Year > 1975 & shark$Year < 1985])
+
+# oldest Australian to die
+
+shark %>% 
+  filter(Fatal == "Y") %>% 
+  filter(Country == "AUSTRALIA") %>% 
+  arrange(desc(Age)) %>% 
+  select(Age) %>% 
+  head(1)
+
+  # base package alternative:
+  max(shark$Age[shark$Fatal == "Y" & shark$Country == "AUSTRALIA"], na.rm = T)
+
+# names of all 20C NZ victims under 16
+shark %>% 
+  filter(Age < 16 ) %>% 
+  filter(Year > 1900 ) %>% 
+  filter(Country == "NEW ZEALAND") %>% 
+  select(Name)
+
+  # base package alternative:
+  shark$Name[shark$Age < 16 & shark$Year > 1900 & shark$Country == "NEW ZEALAND"]
+  unique(shark$Name[shark$Age < 16 & shark$Year > 1900 & shark$Country == "NEW ZEALAND"])
+
+### 3.5 Other types of data structures -----
+
+# matrix 
 matrix(1:20, nrow=5,ncol=4)
 
-## list
+# list
 names <- c("Samwise", "Meriadoc", "Peregrin", "Gimli", "Legolas") 
 hobbit <- c(TRUE, TRUE, TRUE, FALSE, FALSE) 
 age <- c(38, 36, 28, 139, 572) 
 
+# compare 
 data.frame(names, hobbit, age)
-
 list(names, hobbit, age)
+
+# the power of lists: different lengths
+sample_list <- list(een = c(1,2,3), twee = c(1999,2000,2001, 2002, 2003), drie = c("A", "B", "C", "D", "E", "F"))
+sample_list
+
+# subsetting
+sample_list[[2]]
+sample_list[[2]][1]
+
+
+### 4. DATA CLEANING AND MANIPULATION -----
+
+### 4.1 DATA CLEANING AND MANIPULATION -----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
