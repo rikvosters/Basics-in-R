@@ -490,6 +490,26 @@ min(lego$year)
 # names in 1955
 lego$name[lego$year == 1955]
 
+####--- | exercise: negation ---####
+
+# Load a dataset called 'negation.csv' (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv). It contains an entry for each linguistic expression of negation in a corpus of early 19th century Flemish soldiers' letters. Negation either occur with a 'Single' negator, or as 'Bipartite' negation (i.e. with two negators). First use table() to check out what the distribution of Single versus Bipartite negation tokens is. Then work with a subset to find out if either form of negation occurs more often in main clauses with a SVO word order (Subject-Verb-Object), compared to subclauses with a SOV order (Subject-Object-Verb).
+
+####--- | solution: negation ---####
+
+# load
+neg <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv")
+head(neg)
+
+# base package
+table(neg$Negation)
+
+# subset SOV v SVO
+table(neg$Negation[neg$WordOrder == "SOV"])
+table(neg$Negation[neg$WordOrder == "SVO"])
+
+# tip (cf. later)
+table(neg$Negation, neg$WordOrder)
+
 ####--- | exercise: catholic fertility ---####
 
 # Install and load the package called 'datasets'. This package contains a dataset called 'swiss', which contains Swiss fertility and socioeconomic indicators from the year 1888. Save this dataset in your working environment as a new dataframe called 'helvetica', and explore it by looking at the first 10 rows. Now extract the rows only for those districts where more than 50% of the population is catholic, and calculate the mean fertility rate for these predominantly catholic districts. Now compare it to the mean fertility rate of districts with 50% of catholics or less.
@@ -517,18 +537,6 @@ helvetica_catolica <- helvetica[helvetica$Catholic > 50,]
 helvetica_heretica <- helvetica[helvetica$Catholic <= 50,]
 mean(helvetica_catolica$Fertility)
 mean(helvetica_heretica$Fertility)
-
-
-####--- | exercise: negation ---####
-
-# Load a dataset called 'negation.csv' (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv). It contains an entry for each linguistic expression of negation in a corpus of early 19th century Flemish soldiers' letters. Negation either occur with a 'Single' negator, or as 'Bipartite' negation (i.e. with two negators). Try to find out if this happens more in main clauses with a SVO word order (Subject-Verb-Object), compared to subclauses, with a SOV order (Subject-Object-Verb).
-
-# load
-neg <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv", quote = "", encoding = "UTF-8")
-neg
-
-####--- | solution: negation ---####
-
 
 ### 3.4 An alternative approach: tidyverse/dplyr -----
 
@@ -745,9 +753,70 @@ sample_list[[2]][1]
 
 ### 4. DATA CLEANING AND MANIPULATION -----
 
-### 4.1 DATA CLEANING AND MANIPULATION -----
+# New dataset: Dogs of Zuerich (https://www.kaggle.com/kmader/dogs-of-zurich)
+# Data about Dog Owners in Zuerich, Switzerland
+dog <- read.csv("DogsOfZuerich.csv", sep=";")
+head(dog)
+
+### 4.1 Data classes -----
+
+# basic data classes:
+class(age)
+class(hobbit)
+class(names)
+class(dog)
+
+# also on columns in dataframes
+class(dog$DOG_BIRTHYEAR)
+class(dog$DOG_COLOR)
+
+# character versus factor
+dog$OWNER_SEX <- as.factor(dog$OWNER_SEX)
+dog$OWNER_SEX
+
+# cf. as.numeric(), as.character(), etc.
+
+# levels
+levels(dog$OWNER_SEX)
+table(dog$OWNER_SEX)
+barplot(table(dog$OWNER_SEX))
+
+### 4.2 Basic manipulations -----
+
+# reorder factor levels
+
+levels(dog$OWNER_SEX)
+dog$OWNER_SEX <- factor(dog$OWNER_SEX, levels = c("w", "m"))
+levels(dog$OWNER_SEX)
+barplot(table(dog$OWNER_SEX))
+
+# automatically reorder factor levels
+
+head(dog)
+dog$
+levels(shark$Country)
+shark$Country <- fct_reorder(shark$Country, df$a, min)
 
 
+# rename factor levels
+
+dog$DOG_SEX
+dog$DOG_SEX <- fct_recode(dog$DOG_SEX, "male" = "M", "female" = "F") # new = old
+dog$DOG_SEX
+
+# order
+# transform
+# replace / numeric and gsub
+# delete (rows and columns)
+# mutate
+### 4.3 Long and wide data -----
+### 4.4  Merging datasets -----
+### 4.5  Loading multiple files (loops and lapply)-----
+# loop
+# alternative: 
+files <- list.files(pattern = "file_.*csv")
+df_list <- lapply(files, read_csv)
+df <- bind_rows(df_list)
 
 
 
