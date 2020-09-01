@@ -1,0 +1,20 @@
+Var1	Freq
+1	am	1
+2	anespeptic	1
+3	anything	1
+4	can	1
+5	caused	1
+6	compunctious	1
+7	do	1
+8	even	1
+9	extramurilisation	1
+10	facilitate	1
+11	have	1
+12	pericombobulation	1
+13	phrasmotic	1
+14	such	1
+15	velocitous	1
+16	you	1
+17	your	1
+18	i	2
+19	to	2

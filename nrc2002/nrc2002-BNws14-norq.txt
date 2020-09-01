@@ -1,0 +1,60 @@
+DOCUMENT : 14 of 19
+
+PAPER : NRC Handelsblad
+
+DATE : December 14, 2002
+
+
+BYLINE : ( GEORGE BEEKMAN )
+
+SECTION : Wetenschap & Onderwijs ; Pg. 32
+
+LENGTH : 421 words
+
+BODY :
+
+HEADLINE : HUBBLE BEPAALT NAUWKEURIG DE MASSA VAN VERRE PLANEET
+
+De Hubble Space Telescope heeft voor het eerst de ietwat slingerende
+beweging van een ster onder invloed van een planetaire begeleider waargenomen
+( Astrophysical Journal Letters , 20 dec ) . Daarmee heeft de ruimtetelescoop iets
+ontdekt waar astronomen in de vorige eeuw tevergeefs naar hebben gezocht. Zij
+probeerden door het fotografisch volgen van de beweging van sterren het effect
+van een eventuele begeleider te vinden : zo'n begeleider zal de ster een beetje
+heen en weer trekken. De Amerikaans-Nederlandse astronoom Peter van de Kamp
+meende in de jaren zeventig als eerste beet te hebben , maar zijn «planeten»
+bleken slechts meetfouten.
+
+Fotografische platen zijn te «korrelig» om de minieme storing van een
+planeet in de beweging van een ster aan het licht te brengen. Zo'n planeet
+veroorzaakt echter ook een geringe , periodieke variatie in de snelheid van een
+ster en die kan spectroscopisch heel nauwkeurig worden gemeten. Sinds 1995
+hebben astronomen langs deze weg al zo'n honderd extrasolaire planeten van het
+formaat van Jupiter en zwaarder ontdekt. Omdat we echter niet weten onder welke
+hoek we tegen het baanvlak van de begeleider aankijken , kan alleen hun
+minimum-massa worden bepaald. Dit betekent dat sommige begeleiders toch kleine
+sterretjes zouden kunnen zijn.
+
+Vier jaar geleden werd langs deze weg bij de nabije ster Gliese 876 een
+begeleider ontdekt die minstens tweemaal zo zwaar zou moeten zijn als Jupiter.
+Fritz Benedict en zijn collega's hebben de beweging van deze ster daarna met de
+Hubble Space Telescope gevolgd. Zij gebruikten een van diens
+fijngeleidingssensoren , waarmee de telescoop lange tijd exact op een doel kan
+worden gericht. Met deze optische sensor kan dankzij geavanceerde
+interferentietechnieken de positie van een ster ten opzichte van andere sterren
+worden bepaald en wel tot op een fractie van een duizendste boogseconde
+nauwkeurig !
+
+Hubble ontdekte in de beweging van de ster een slingering ter grootte van
+een kwart milliboogseconde : het hoekje waaronder een eurocent op een afstand van
+10.000 kilometer wordt gezien. Die slingering is mede zo klein doordat het
+baanvlak van de aantrekkende begeleider een hoek van slechts 6 graden maakt met
+de richting naar de aarde. Uit deze hoek kan nu ook precies de massa van de
+begeleider worden bepaald : 1,9 maal die van Jupiter. Het gaat dus om een
+planeet.
+
+
+TAIL :
+Optische instrumenten ; Astronomie en ruimtevaart ; Wetenschap en Techniek ;
+Exacte Wetenschappen ; Technische Wetenschappen ; Instrumenten en Apparaten
+

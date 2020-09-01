@@ -1,0 +1,38 @@
+DOCUMENT : 125 of 201
+
+PAPER : NRC Handelsblad
+
+DATE : December 11, 2002
+
+
+SOURCE : Reuters
+
+BYLINE : ( REUTERS )
+
+SECTION : Economie ; Pg. 17
+
+LENGTH : 160 words
+
+DATELINE : SYDNEY , 11 DEC.
+
+BODY :
+
+HEADLINE : Dieven lanceren nep-website
+
+Criminelen hebben geprobeerd om creditcardgegevens te stelen met behulp van
+een nep-website. De internetpagina leek sprekend op die van veilinghuis eBay.
+Met emails werden klanten van eBay benaderd met het verzoek om zich te melden op
+de website , ebayupdates.com , en opnieuw hun gegevens in te vullen voor het
+veilinghuis. De site is ontdekt door SANS Institute Internet Storm Center , een
+Amerikaans commercieel bedrijf dat zich met veiligheid op internet bezighoudt.
+De pagina heeft slechts enkele dagen gefunctioneerd en is inmiddels door
+ingrijpen van SANS uit de lucht gehaald. Het is onduidelijk of de criminelen ook
+slachtoffers hebben gemaakt. eBay onderzoekt de kwestie en waarschuwt op zijn
+eigen website voor emailtjes waarin klanten om creditcardgegevens en
+wachtwoorden wordt gevraagd.
+
+
+TAIL :
+Internet ; Vermogensdelicten ; Recht ; Criminaliteit ; Delicten ; Wetenschap
+en Techniek ; Technische Wetenschappen ; Informatica ; Computernetwerken
+

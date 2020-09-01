@@ -1,0 +1,67 @@
+DOCUMENT : 7 of 19
+
+PAPER : NRC Handelsblad
+
+DATE : December 14, 2002
+
+
+BYLINE : ( BRUNO VAN WAYENBURG )
+
+SECTION : Wetenschap & Onderwijs ; Pg. 37
+
+LENGTH : 491 words
+
+BODY :
+
+HEADLINE : SANDWICH VAN KOPER EN PIEPSCHUIM BUNDELT MICROGOLFSTRALING
+
+Met een stapeltje koperplaten met een patroon van 5 millimeter grote graten ,
+en daartussen piepschuim , zijn eenvoudig en compact microgolven te bundelen ,
+zonder dat er schotelantennes aan te pas komen. Franse onderzoekers ontwierpen
+dit «metamateriaal» ( Physical Review Letters , 18 nov ) .
+
+Het metamateriaal dankt zijn bijzondere eigenschappen aan de uitzonderlijk
+lage brekingsindex , bijna nul , voor de gebruikte microgolfstraling. Dat houdt in
+straling van een bron binnenin het materiaal , die in alle richtingen straalt ,
+bij het uittreden gebundeld wordt in een richting. De onderzoekers maten een
+kegelvormige bundel met een spreiding van nog maar tien graden.
+
+Behalve voor het bundelen van microgolven , bruikbaar voor zendantennes in de
+telecommunicatie , zouden met hetzelfde principe ook een richtantennes gebouwd
+kunnen worden , die alleen straling uit een bepaalde richting oppikt. Zulke
+ontwerpen zouden compacter en eenvoudiger kunnen zijn zijn dan de nu gebruikte
+antenneschotels , denken de onderzoekers. Nog volledig hypothetische
+metamaterialen voor zichtbaar licht zouden een nieuwe klasse van lenzen kunnen
+opleveren met bijzondere eigenschappen , maar vereisen wel veel kleinere ,
+lastiger te maken , afmetingen.
+
+Voorlopig zijn natuurkundigen echter nog vooral gefascineerd door de
+exotische eigenschappen en mogelijkheden van metamaterialen , regelmatige
+geordende constructies van metaal en isolerend materiaal. Voor licht van
+bepaalde golflengen gedragen metamaterialen zich als een homogeen materiaal ,
+maar wel een materiaal met een bijzondere brekingsindex die in gewone materialen
+niet voorkomt.
+
+De brekingsindex bepaalt , volgens de wet van Snellius , wat voor knik een
+lichtbundel maakt bij het intreden van het materiaal. Voor normale materialen
+ligt de brekingsindex altijd boven de een , zodat een schuin invallende bundel
+binnen in het materiaal minder schuin loopt. Het effect wordt gebruikt in lenzen
+om licht te bundelen , en veroorzaakt ook de schijnbare knik in een rietje dat
+half in de limonade steekt. Maar als de brekingsindex kleiner is dan een , wordt
+de hoek tussen bundel met het oppervlak kleiner : de bundel gaat in het materiaal
+nog schuiner lopen. Omgekeerd gaat een straal die zo'n metamateriaal verlaat
+juist minder schuin lopen : de stralen lopen dicht er langs de loodlijn op het
+oppervlak. Dat is het bundelende effect dat de onderzoekers beschreven.
+
+Eerder zijn metamaterialen met een negatieve brekingsindex beschreven , die
+zouden kunnen dienen als «superlenzen» voor microgolfstraling : lenzen die ook
+details vergroten die kleiner zijn dan de golflengte van het waargenomen licht ,
+die normaal gesproken een limiet is aan het oplossend vermogen van microscopen
+of telescopen. Overigens zijn theorie en experimenten met negatieve
+brekingsindices nog omstreden.
+
+
+TAIL :
+Materialen en gereedschappen ; Natuurkunde ; Wetenschap en Techniek ; Exacte
+Wetenschappen ; Technische Wetenschappen
+

@@ -1,0 +1,5 @@
+x
+1	I don't know	half	of you half as well as I should like.
+2	I don't know half of you	half	as well as I should like.
+3	And I like less than	half	of you half as well as you deserve.
+4	And I like less than half of you	half	as well as you deserve.

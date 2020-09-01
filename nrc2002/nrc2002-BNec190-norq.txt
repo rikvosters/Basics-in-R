@@ -1,0 +1,113 @@
+DOCUMENT : 190 of 201
+
+PAPER : NRC Handelsblad
+
+DATE : December 9, 2002
+
+
+BYLINE : DOOR MARIE-JOSE KLAVER
+
+SECTION : Economie / Product & Technie ; Pg. 14
+
+LENGTH : 935 words
+
+BODY :
+
+HEADLINE : Verzuurd papier bewaard op het web
+
+Blad na blad scheurt de medewerker van Zylab uit de ingebonden jaargangen
+van De Groene Amsterdammer. Hij legt ze , heel voorzichtig , onder de scanner. De
+werkstudenten die voor het archiveringsbedrijf Zylab De Groene digitaliseren
+weten dat het archief van het in 1877 opgerichte weekblad een kostbaar bezit is
+waar voorzichtig mee moet worden omgesprongen. Aan de andere kant van de tafel
+zit een collega die de ingescande pagina's op de computer bewerkt. Hij
+selecteert alle artikelen en advertenties zodat de internetgebruiker of
+wetenschappelijk onderzoeker niet hele pagina's van het weekblad hoeft te lezen
+om de informatie te vinden die hij zoekt.
+
+De eerste 64 jaargangen , van 1877 tot 1940, van De Groene staan nu online.
+Met een subsidie van het Prins Bernhard Cultuurfonds en de praktische hulp van
+het Nederlandse archiveringsbedrijf Zylab wordt de hele Groene gedigitaliseerd
+en doorzoekbaar gemaakt. Door de digitalisering kan de inhoud van het blad
+behouden blijven. Een deel van het papieren archief , met name de jaargangen 1877
+tot 1900, is langzaam aan het vergaan door verzuring. Deze jaargangen verkeren
+in zeer slechte staat. Het papier dat in die tijd werd gebruikt , was van slechte
+kwaliteit , wat verzuring en zwarte gaten tot gevolg heeft. Het digitale archief
+is gratis toegankelijk op het web ( www.groene.nl/zylab ) . De digitale kopieen
+zijn geheel gelijk aan het papieren origineel.
+
+In het digitale archief kan op trefwoorden gezocht worden in hele pagina's
+of in artikelen. Als voor de optie «hele pagina's» wordt gekozen , staat als
+zoekresultaat de datum op het scherm. Klikken op de datum leidt naar een hele
+tijdschriftpagina. Bij zoeken in artikelen verschijnt de kop van het stuk en de
+datum. De gevonden termen lichten geel op in de gevonden pagina's en artikelen.
+De documenten kunnen vergroot en verkleind worden. Zowel de pagina's als de
+artikelen kunnen worden opgeslagen als PDF- en TIF-bestand.
+
+Via de knop «Instellen» kan ook op jaargang worden gezocht. Er zijn meer
+geavanceerde zoekmogelijkheden. Zo kan de gebruiker het formaat ( lage resolutie ,
+uitvergroot , met of zonder markeringen ) , het aantal zoekresultaten ( van 10 tot
+100 ) en de «fuzzygraad» instellen. Hoe hoger de fuzzygraad des te hoger het
+aantal zoekresultaten dat lijkt op de opgegeven zoekterm.
+
+Het in Amsterdam Zuidoost gevestigde Zylab houdt zich sinds 1983 met
+digitale archieven en computerzoeksystemen bezig. Een van de eerste klanten van
+het bedrijf , dat in de Verenigde Staten is begonnen , was de FBI. De Amerikaanse
+politiedienst zocht hulp om de harde schijven van in beslag genomen computers te
+doorzoeken.
+
+Tegenwoordig richt Zylab , dat in 2002 een omzet van 10 miljoen euro had ,
+zich hoofdzakelijk op het digitaliseren van papieren archieven , administraties
+en in beslag genomen documenten die gedigitaliseerd worden. Dagelijks kunnen
+twee mensen 15.000 pagina's verwerken.
+
+De software van Zylab wordt gebruikt om onder meer dozen vol in beslag
+genomen papieren , strafdossiers en processen verbaal te digitaliseren en full
+text doorzoekbaar te maken. Tot de klanten behoren onder andere opsporings- en
+inlichtingendiensten als de FIOD ( Fiscale inlichtingen en opsporingsdienst ) , de
+AID ( de Algemene Inspectiedienst van het ministerie van Landbouw ) , de FBI
+( Federal Bureau of Investigation ) , Interpol , het Rwanda Oorlogstribunaal en de
+Vreemdelingenpolitie. Andere klanten zijn onder meer de verzekeraar Lloyds ,
+Ahold , KLM , Corus , de World Health Organization ( WHO ) en UNICEF.
+
+De fuzzy logic in de software zorgt ervoor dat spelfouten en verkeerd
+geschreven namen het zoeken niet belemmeren. Het zoekprogramma weet dat in een
+slordig getypt proces verbaal Henk Kramer en Henk Cramer dezelfde persoon kunnen
+zijn. De software kan ook zo ingesteld worden dat er een onderscheid wordt
+gemaakt tussen Henk Kramer en Henk Cramer.
+
+Bedrijven gebruiken de software van Zylab bijvoorbeeld om hun administratie
+of correspondentie met klanten te digitaliseren. Ook voor het archiveren van
+e-mail is de software geschikt.
+
+De Koninklijke Bibliotheek ( KB ) neemt binnenkort een ander digitaal
+archiveringssysteem in gebruik. Sinds 1996 neemt de KB elektronische publicaties
+( onder meer cd-roms , digitale magazines , websites en pdf-bestanden ) op in haar
+collectie.
+
+Het digitale archief waarin elektronische publicaties worden bewaard ,
+E-depot geheten , wordt op 12 december in gebruik genomen. Het is ontwikkeld door
+IBM. E-depot zal onder meer gebruikt worden om digitale tijdschriften van
+Elsevier Science te archiveren en andere elektronische uitgaven die de KB
+bewaart. Het Elsevier Science-archief zal meer dan 1.500 wetenschappelijke
+tijdschriften bevatten , bij elkaar meer dan 7 terabyte aan gegevens. ( 1 terabyte
+is 1.024 gigabyte. )
+
+De tijdschriften van Elsevier Science zullen in twee elektronische formaten
+worden aangeleverd : als PDF-bestanden ( deze bestanden zijn identiek aan de
+gedrukte pagina's ) en in tekstformaat. Het laatste formaat maakt geavanceerd
+zoeken mogelijk en kan ook worden ingevoegd in andere formaten , zoals
+webpagina's ( HTML ) .
+
+Het digitale archief van Elsevier Science is niet alleen bedoeld voor de KB
+en haar bezoekers , maar ook voor de uitgever zelf. Het archief zal dienen als
+een back-up voor Elsevier. Als de systemen van het bedrijf uitvallen , krijgen de
+medewerkers en de klanten toegang tot Elsevier Science via de KB.
+
+Websites : www.groene.nl/zylab ; www.zylab.com ; www.kb.nl/e-depot
+
+
+TAIL :
+Software ; Bibliotheken en archieven ; Kunst en Cultuur ; Cultuur ;
+Wetenschap en Techniek ; Technische Wetenschappen ; Informatica
+
