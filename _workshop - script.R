@@ -1205,12 +1205,12 @@ write_xlsx(freq.trump, path = "freqlist_trump.xlsx")
 
 #### --- | exercise: corpus English dialogues  ---#####
 
-# Load the "CED_example.txt" file from the Corpus of English Dialogues 1560-1760 (CED), and try to make a frequency list (without punctuation) of this corpus, filtering out the words 'sample', 'file' and 'ced'. Limit yourself to the 25 most frequent words, save the frequency list, and visualize the 25 most frequent words in a graph. For the visualization, use the barplot() function.
+# Load the "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/CED_example.txt" file from the Corpus of English Dialogues 1560-1760 (CED), and try to make a frequency list (without punctuation) of this corpus, filtering out the words 'sample', 'file' and 'ced'. Limit yourself to the 25 most frequent words, save the frequency list, and visualize the 25 most frequent words in a graph. For the visualization, use the barplot() function.
 
 
 #### --- | exercise: Dickens  ---####
 
-# Load Charles Dickens' novel A Tale of Two Cities ("Dickens-TwoCities.txt") as separate words into R. Then remove punctuation and make the entire text uppercase. Also filter out stopwords using the stopwords() function, and make a sorted frequency table, which you save as an Excel spreadsheet.
+# Load Charles Dickens' novel A Tale of Two Cities ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-TwoCities.txt") as separate words into R. Then remove punctuation and make the entire text uppercase. Also filter out stopwords using the stopwords() function, and make a sorted frequency table, which you save as an Excel spreadsheet.
 
 
 ### 5.6 Keyness and word clouds -----
@@ -1327,7 +1327,7 @@ barplot(to_plot, main = "Keywords (not significant)", ylab = "Absolute frequency
 
 #### --- | exercise: Netherlandic Dutch  ---#####
 
-# For this exercise, we will try to find out which words are typical for Dutch as spoken in the Netherlands, versus Dutch as spoken in Flanders. We will load component A ('spoken conversations') of the Corpus of Spoken Dutch (CGN), with the Netherlandic Dutch subcomponent (CGN-A-nl.txt) and the Flemish Dutch subcomponent (CGN-A-vl.txt) in separate corpus files. Load "CGN-A-vl.txt" as your corpus, and use "CGN-A-nl.txt" as a reference corpus. Then make a copy of the 'keyness' code above, and try to adjust it so that it will work for this assignment. Make a graph showing your results, based on the code sample above, but only retain the words with 25 highest X2-values in your graph.
+# For this exercise, we will try to find out which words are typical for Dutch as spoken in the Netherlands, versus Dutch as spoken in Flanders. We will load component A ('spoken conversations') of the Corpus of Spoken Dutch (CGN), with the Netherlandic Dutch subcomponent (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/CGN-A-nl.txt) and the Flemish Dutch subcomponent (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/CGN-A-vl.txt) in separate corpus files. Load "CGN-A-vl.txt" as your corpus, and use "CGN-A-nl.txt" as a reference corpus. Then make a copy of the 'keyness' code above, and try to adjust it so that it will work for this assignment. Make a graph showing your results, based on the code sample above, but only retain the words with 25 highest X2-values in your graph.
 
 
 # B. Word clouds
@@ -1419,7 +1419,7 @@ exact.matches("half", corpus, characters.around = 10)[[4]]
 
 #### --- | exercise: exact matches Old Bailey ---####
 
-# Load each line of the "Old Bailey fragment OBC-17320114.txt" as an item in the corpus vector. Next, search for any instances of the forms 'I', 'he', 'us' and 'him' in the corpus, and create a txt-file where the hits are shown in context, but separated by tabs. Save this file and open it in a spreadsheet processor to inspect the hits.
+# Load each line of the "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/OldBaileyFragmentOBC-17320114.txt" as an item in the corpus vector. Next, search for any instances of the forms 'I', 'he', 'us' and 'him' in the corpus, and create a txt-file where the hits are shown in context, but separated by tabs. Save this file and open it in a spreadsheet processor to inspect the hits.
 
 
 #### --- | exercise: terrorism in newspapers  ---#####
