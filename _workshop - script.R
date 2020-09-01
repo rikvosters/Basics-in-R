@@ -1047,20 +1047,11 @@ df <- bind_rows(df_list)
 df
 
 
-### EXC: wide to long + merge + loop
-
-####--- | exercise:  ---####
-
-
-
-####--- | solution: presidential frequency tables ---####
-
-
 ####--- | exercise: presidential frequency tables ---####
 
 # Write a loop to load all (two) data files that start with the word 'freqtabel', which contains the inaugural addresses of the last two US presidents. Bind them together with 'rbind()' into one dataframe. Then use the filter() function to check how often the word 'america' occurs in each one. 
 
-####--- | solution:  ---####
+####--- | solution: presidential frequency tables ---####
 
 data.files <- list.files(pattern="freqtabel"); data.files
 data <- data.frame()
@@ -1073,6 +1064,72 @@ data
 # filter out frequencies of 'America'
 data %>% 
   filter(Token == "america")
+
+####--- | exercise: metal ---####
+
+# Load an Excel dataset ('metal_data.xlsx') on metal bands by nation and the corresponding set of metadata (metal_meta.xlsx) from your working directory (source: https://www.kaggle.com/mrpantherson/metal-by-nation). Merge the two and try to find out the following:
+# - What is the name of the oldest Iranian metal band that is still together? For this last element (still together), use 'filter(is.na(split))': this will filter out the rows where the 'split' value is 'NA'. 
+# - Are there any Mexicans metal bands who play some sort of death metal, and if so, how large is their (total) fan base?
+
+####--- | solution: metal ---####
+
+# load 'metal_data'
+metal_data <- read_excel("metal_data.xlsx")
+metal_data
+
+# load 'metal_meta'
+metal_meta <- read_excel("metal_meta.xlsx")
+metal_meta
+
+# merge
+metal <- merge(metal_data, metal_meta, by = "ID")
+head(metal)
+
+# name of the oldest Iranian metal band still together
+metal %>% 
+  filter(origin == "Iran") %>% 
+  filter(is.na(split)) %>% 
+  arrange(formed) %>% 
+  head(1)
+
+# Mexican death metal bands
+metal %>% 
+  filter(origin == "Mexico") %>% 
+  filter(str_detect(style, "death"))
+
+# Mexican death metal fan base
+metal %>% 
+  filter(origin == "Mexico") %>% 
+  filter(str_detect(style, "death")) %>% 
+  select(fans) %>% 
+  sum()
+  
+
+####--- | exercise: influenza ---####
+
+# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make a plot of this by piping it (%>%) to the following line of code:
+# ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
+
+####--- | solution: influenza ---####
+
+# load 'DeathRatesforMajorCauses_wide.csv'
+dth <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv", check.names = F)
+dth
+
+# wide to long
+dth %>% 
+  pivot_longer(cols = `1900`:`2013`, names_to = "Year", values_to = "AgeAdjustedDeathRate") -> dth
+
+# make year numeric
+dth$Year <- as.numeric(dth$Year)
+dth
+
+# filter out and plot Age Adjusted Death Rate for Influenza and Pneumonia
+dth %>% 
+  filter(LeadingCauses == "Influenza and Pneumonia") %>% 
+  ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
+
+
 
 
 
