@@ -887,7 +887,7 @@ for (i in 1:50) { # define counter 'i' and iterate from 1 till 20
 
 #### --- | exercise: influenza ---####
 
-# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make a plot of this by piping it (%>%) to the following line of code:
+# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make a plot of this by piping it (%>%) to the following line of code:
 # ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
 
 
@@ -908,10 +908,10 @@ rm(list = ls(all = TRUE))
 # (= e.g. each line as one element)
 
 # per word (no specification of 'sep' needed)
-corpus.file.lower.words <- scan(file = "Dickens-ChristmasCarol.txt", what = character(0))
+corpus.file.lower.words <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0))
 
 # per line (sep = "\n")
-corpus.file <- scan(file = "Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")
+corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")
 corpus.file
 
 # alternatively:
@@ -921,10 +921,10 @@ corpus.file
 # Mac / Linux - library(tcltk); tk_choose.files()
 
 # all in lower case
-corpus.file.lower <- tolower(scan(file = "Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")) # opposite: toupper()
+corpus.file.lower <- tolower(scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")) # opposite: toupper()
 
 # encoding problems:
-corpus.file <- scan(file = "Dickens-ChristmasCarol.txt", what = character(0), sep = "\n", fileEncoding = "UNICODE-1-1") # argument: fileEncoding=""
+corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n", fileEncoding = "UNICODE-1-1") # argument: fileEncoding=""
 corpus.file
 iconvlist() # all encoding options for platform
 
@@ -1068,9 +1068,11 @@ NL %>%
 # example: inaugual addresses last two US presidents
 
 # load both corpora, convert to lower case
-obama <- scan(file = "speech-obama.txt", what = character(0), quote = "")
+obama <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/speech-obama.txt", 
+              what = character(0), quote = "")
 obama <- tolower(obama)
-trump <- scan(file = "speech-trump.txt", what = character(0), quote = "")
+trump <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/speech-trump.txt", 
+              what = character(0), quote = "")
 trump <- tolower(trump)
 
 # explore
@@ -1225,8 +1227,8 @@ rm(list = ls(all = T))
 # trump v. other recent presidents (Ronald Reagan, George Bush, Bill Clinton, George W. Bush, Barack Obama)
 
 # load (word for word)
-corpus <- scan(file = "speech-trump.txt", what = character(0), quote = "")
-ref.corpus <- scan(file = "speech-reference.txt", what = character(0), quote = "")
+corpus <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/speech-trump.txt", what = character(0), quote = "")
+ref.corpus <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/speech-reference.txt", what = character(0), quote = "")
 
 # remove punctuation
 punctuation.remover <- function(text) {
@@ -1336,7 +1338,7 @@ barplot(to_plot, main = "Keywords (not significant)", ylab = "Absolute frequency
 library("wordcloud")
 
 # load
-words <- scan(file = "coleridge.txt", what = character(0), fileEncoding = "UTF-8")
+words <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/coleridge.txt", what = character(0), fileEncoding = "UTF-8")
 words <- tolower(words)
 head(words, 50)
 
