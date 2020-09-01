@@ -12,7 +12,16 @@ Click the green 'CODE' button and chose 'DOWNLOAD ZIP' to download all the files
 
 ## Contact
 
-Rik Vosters
+Prof. Dr. Rik Vosters
+
+Department of Linguistics and Literary Studies
+
+Faculty of Languages and Humanities
+
+Vrije Universiteit Brussel
+
 Rik.Vosters@vub.be
+
 http://www.rikvosters.be
+
 http://www/historicalsociolinguistics.be
