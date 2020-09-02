@@ -179,7 +179,7 @@ library(tidyverse)
 
 #### --- | exercise: hours of sleep  ---####
 
-# - Assign values to create two vectors: one called 'sleep_week' where you input 5 numeric values for the (actual or ficticious) number of hours of sleep you got per weekday last week, and one called 'sleep_weekend'where you input 2 numeric values for the number of hours of sleep you got per day of the weekend last week. Make an estimation up to one decimal point (e.g. 8.5).
+# - Assign values to create two vectors: one called 'sleep_week' where you input 5 numeric values for the (actual or fictitious) number of hours of sleep you got per weekday last week, and one called 'sleep_weekend' where you input 2 numeric values for the number of hours of sleep you got per day of the weekend last week. Make an estimation up to one decimal point (e.g. 8.5).
 # - Create a new vector called 'weekend_zzz', for which you (automatically) calculate on average how many more hours of sleep you get in the weekend compared to during the week.
 
 
@@ -404,7 +404,6 @@ OE[OE$Reaction_time > 25, ] # Subset the dataframe OE with all the entries
 # Mind the comma!
 OE[OE$Scribe != "Roderick", ]
 OE[OE$Reaction_time > 25 & OE$Pronunciation == "/r/", ]
-
 
 # head()
 
