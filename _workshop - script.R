@@ -31,8 +31,9 @@
 # 5.5 Frequency lists
 # 5.6 Keyness and word clouds
 # 5.7 Concordances and collocations
-# 6. ANALYZING AND VISUALIZING CATEGORICAL DATA
-# 7. ANALYZING AND VISUALIZING NUMERIC DATA
+# 6. DATA EXPLORATION AND VISUALIZATION 
+# 7. BASIC STATISTICS
+
 
 ### 1. GETTING STARTED -----
 
@@ -180,6 +181,7 @@ library(tidyverse)
 
 # - Assign values to create two vectors: one called 'sleep_week' where you input 5 numeric values for the (actual or ficticious) number of hours of sleep you got per weekday last week, and one called 'sleep_weekend'where you input 2 numeric values for the number of hours of sleep you got per day of the weekend last week. Make an estimation up to one decimal point (e.g. 8.5).
 # - Create a new vector called 'weekend_zzz', for which you (automatically) calculate on average how many more hours of sleep you get in the weekend compared to during the week.
+
 
 ### 2. BASIC VECTORS -----
 
