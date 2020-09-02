@@ -449,7 +449,7 @@ read_excel("SharkAttacks.xlsx")
 
 # some data is just available in a ready-made R package
 # e.g. baby names
-library(babynames) # first (just once): install.packages(babynames)
+library(babynames) # first (just once): install.packages("babynames")
 bb <- babynames
 bb # also tibble
 
