@@ -892,9 +892,7 @@ for (i in 1:50) { # define counter 'i' and iterate from 1 till 20
 
 #### --- | exercise: influenza ---####
 
-# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make a plot of this by piping it (%>%) to the following line of code:
-# ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
-
+# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this. Finally, make a similar plot comparing the death rates per year for all of the major causes of death in the dataset. Save the last plot as a pdf.
 
 ### 5. ANALYZING TEXTUAL DATA -----
 
