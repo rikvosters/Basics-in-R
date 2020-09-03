@@ -76,7 +76,6 @@ for (i in 1:length(data.files)) {   # iterate over file names
 
 data
 
-
 # alternative: 
 files <- list.files(pattern = "text_loop")
 df_list <- lapply(files, read.csv)
