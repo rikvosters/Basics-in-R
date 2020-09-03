@@ -514,7 +514,7 @@ plot(sort(wordcounts))
 
 round(mean(babynames$n))
 # is the same as:
-babynames$n %>%
+babynames$n %>% # CTRL/CMD + SHIFT + M
   mean() %>%
   round()
 
@@ -554,6 +554,10 @@ babynames %>%
 
 babynames %>%
   mutate(prop_overall = n / sum(n)) -> babynames
+
+# same as:
+babynames <- babynames %>%
+  mutate(prop_overall = n / sum(n))
 
 # select(): select variables (columns)
 
@@ -609,7 +613,7 @@ babynames %>%
 # - Check if more shark attacks occurred in the 10 years before the movie Jaws came out in 1975, compared to 10 years after Jaws.
 # - How old was the oldest Australian every to die from a shark attack?
 # - Extract the names of all New Zealand victims of shark attacks in the 20th century, under the age of 16.
-
+read.csv("", sep = "\t", quote = "")
 
 
 ### 3.5 Other types of data structures -----
@@ -1371,7 +1375,7 @@ table_STC <- table_STC[1:100]
 # word cloud
 wordcloud(words = names(table_STC), freq = table_STC, min.freq = 1, max.words = 1000, random.order = FALSE, random.color = TRUE, rot.per = 0.3, use.r.layout = T, colors = brewer.pal(8, "Dark2"), scale = c(3.9, 0.6))
 
-### 5.7 Concordances and collocations -----
+### 5.7 Concordances -----
 
 rm(list = ls(all = TRUE))
 
