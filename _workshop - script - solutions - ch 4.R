@@ -55,32 +55,6 @@ for (i in 1:50) {  # set counter i
   print(x)         # show result on screen
 }
 
-# loop to load various files
-
-# as a preparation: define names of data files in a vector called data.files
-data.files <- list.files(pattern="text_loop")
-# any file in the working directory with " " in its name
-# often you can use: pattern="txt"
-data.files
-
-# also, already created an empty character vector into which the whole data file will be loaded
-data <- data.frame()
-
-# start the loop
-for (i in 1:length(data.files)) {   # iterate over file names 
-  # read in corpus file as lower case and save it in current.file
-  current.file <- read.csv(data.files[i])
-  # append the current.file to the rest
-  data <- rbind(data, current.file)
-}
-
-data
-
-# alternative: 
-files <- list.files(pattern = "text_loop")
-df_list <- lapply(files, read.csv)
-df <- bind_rows(df_list)
-df
 
 
 ####--- | solution: presidential frequency tables ---####
