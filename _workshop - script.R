@@ -746,7 +746,7 @@ hist(dog$AGE)
 
 head(dog) # order by dog age instead of ID
 dog %>%
-  arrange(AGE) -> god
+  arrange(AGE) -> dog
 head(dog)
 
 # change column names: rename()
