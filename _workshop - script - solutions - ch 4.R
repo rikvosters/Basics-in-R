@@ -30,7 +30,7 @@ dog %>%
   select(SIZE) %>% 
   table()
 
-dog %>% 
+dog %>%
   filter(OWNER_SEX == "m") %>% 
   select(SIZE) %>% 
   table()
