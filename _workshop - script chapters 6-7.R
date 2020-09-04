@@ -129,7 +129,7 @@ prop.table(table(tt$Survived, tt$Sex), 2) # each column totals 100 (= read: rela
 round(prop.table(table(tt$Survived, tt$Sex), 2), 2)
 
 # percentages?
-round(prop.table(table(tt$Survived, tt$Sex), 2), 3)*100
+round(prop.table(table(dv, iv), 2), 3)*100
 
 # tip: make your own function
 
@@ -155,7 +155,8 @@ cut(tt$Age, breaks = 4, labels = c("adolescent", "young", "middle-aged", "elderl
 
 # do it yourself
 cut(tt$Age, breaks = c(0, 18, 30, 50, 100))
-cut(tt$Age, breaks = c(0, 18, 30, 50, 100), labels = c("adolescent", "young", "middle-aged", "elderly"))
+cut(tt$Age, breaks = c(0, 18, 30, 50, 100), 
+    labels = c("adolescent", "young", "middle-aged", "elderly"))
 
 # save/assign
 tt$Age_fct <- cut(tt$Age, breaks = c(0, 18, 30, 50, 100), labels = c("adolescent", "young", "middle-aged", "elderly"))
@@ -202,7 +203,7 @@ plot(tt$Age_fct, tt$Fare)
   # option: rotate axis labels
   plot(tt$Age_fct, tt$Fare, ylim = c(0,300), las = 2)
   
-  # adjust marginss
+  # adjust margins
   par(mar=c(7,4.1,4.1,2.1))
   plot(tt$Age_fct, tt$Fare, ylim = c(0,300), las = 2, xlab = "")
   par(mar=c(5.1,4.1,4.1,2.1))
@@ -221,7 +222,7 @@ plot(tt$Survived ~ tt$Embarked)
   # option: titles
   plot(tt$Survived ~ tt$Embarked, xlab = "Port of Embarkment",
        ylab = "Survived", col=c("green", "darkgreen"),
-       main = "My plot title")
+       main = "My plot title 2")
   
 # BARPLOTS
 
@@ -296,7 +297,7 @@ assoc(table(tt$Class, tt$Embarked), shade=TRUE, legend = T)
 
 sample <- data.frame(year = c(1700, 1750, 1800, 1850, 1900), observations = c(123, 136, 195, 277, 288))
 plot(sample, type = "l")
-plot(sample, type = "b", pch = 15)
+plot(sample, type = "b", pch = 5)
 
 # SAVING GRAPHS
 
@@ -329,7 +330,8 @@ tt %>%
   summarise(mean_fare = mean(Fare),
             stddev_fare = sd(Fare),
             median_fare = median(Fare),
-            IQR_fare = IQR(Fare))
+            IQR_fare = IQR(Fare)) -> summ_embarked
+summ_embarked
 
 # combine with other dplyr functions, such as filter to filter out NA's
 tt %>% 
@@ -416,12 +418,13 @@ tt %>%
   geom_point() +
   geom_label(aes(label = Name, hjust = 0, vjust = 0))
 
-
 tt %>% 
   filter(Class == "1") %>% 
   ggplot(aes(x = Age, y = Fare)) +
   geom_point() +
-  geom_hline(yintercept = mean(tt$Fare), col = "red")
+  geom_hline(yintercept = mean(tt$Fare), col = "red") +
+  geom_hline(yintercept = median(tt$Fare), col = "blue")
+
 
 # easy saving to hard disk (working directory)
 tt %>% 
@@ -472,7 +475,7 @@ tt %>%
 
 tt %>% 
   ggplot(aes(x = Age, y = Fare, col = Class)) +
-  geom_point() 
+  geom_point()
   
 tt %>% 
   ggplot(aes(x = Age, y = Fare, size = SiblingsSpouses)) +
@@ -497,7 +500,8 @@ tt %>%        # useless
 
 tt %>%         # better
   ggplot(aes(x = Class, y = Fare)) +
-  geom_point(position = "jitter")
+  geom_point(position = "jitter") +
+  geom_boxplot(col="white", fill=NA)
 
 # other possibility:
 
@@ -592,7 +596,7 @@ tt %>%
   geom_boxplot(notch = T) +
   scale_y_continuous(limits = c(0,150))
 
-# VIOLIN PLOTS
+# VIOLIN PLOTS  ,
 
 tt %>% 
   ggplot(aes(x = Survived, y = Age)) +
