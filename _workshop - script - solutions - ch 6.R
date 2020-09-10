@@ -1,5 +1,7 @@
 ####--- | solution: influenza ---####
 
+library(tidyverse)
+
 # load 'DeathRatesforMajorCauses_wide.csv'
 dth <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv", check.names = F)
 dth

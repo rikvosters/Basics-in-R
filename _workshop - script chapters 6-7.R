@@ -679,6 +679,7 @@ test # sign.
 # - 80% of expected frequencies >= 5, and all >1
 str(test)
 test$expected
+test$p.value
 
 # Conclusion: the two outcomes (survived, deceased) are not equally frequent (chi-square=48.091, df=1, p<0.001)
 
@@ -708,7 +709,7 @@ test$expected
 library(DescTools)
 CramerV(table(tt$Survived, tt$Embarked)) # report Cramer's V: from 0 to 1 (= perfect association)
 # compare:
-CramerV(table(tt$Survived, tt$Class)) 
+CramerV(table(tt$Survived, tt$Class))
 
 
 ### 7.3 Means -----
@@ -735,7 +736,7 @@ tapply(tt$Fare, tt$Sex, median) # so median difference is significant
 
 # visually
 plot(tt$Fare ~ tt$Age)
-abline(lm(Fare ~ Age, data=tt), col="red", lwd=2)
+abline(lm(Fare ~ Age, data=tt), col="red", lwd=2) # alt for geom_smooth
 
 # correlation score:
 cor(tt$Fare, tt$Age, use = "complete.obs") # ignore NA's: use = "complete.obs"s

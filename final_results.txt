@@ -1,0 +1,29 @@
+
+
+
+Anonymous 	-->	 ABronte
+EBronte_Wuthering 	-->	 CBronte
+Eliot_Adam 	-->	 Dickens
+Eliot_Middlemarch 	-->	 Dickens
+Eliot_Mill 	-->	 Dickens
+Fielding_Joseph 	-->	 CBronte
+Fielding_Tom 	-->	 Austen
+Richardson_Clarissa 	-->	 ABronte
+Richardson_Pamela 	-->	 ABronte
+Sterne_Sentimental 	-->	 CBronte
+Sterne_Tristram 	-->	 CBronte
+Thackeray_Barry 	-->	 CBronte
+Thackeray_Pendennis 	-->	 CBronte
+Thackeray_Vanity 	-->	 CBronte
+Trollope_Barchester 	-->	 Austen
+Trollope_Phineas 	-->	 Austen
+Trollope_Prime 	-->	 Austen
+
+100 MFW , culled @ 0%,  0 of 0	(NaN%)
+
+General attributive success:  0 of 0 (NaN%)
+
+MFWs from 100 to 100 @ increment 100
+Culling from 0 to 0 @ increment 20
+Pronouns deleted: FALSE
+
