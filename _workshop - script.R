@@ -473,7 +473,7 @@ bb # also tibble
 # Load a dataset called 'negation.csv' (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv). It contains an entry for each linguistic expression of negation in a corpus of early 19th century Flemish soldiers' letters. Negation either occur with a 'Single' negator, or as 'Bipartite' negation (i.e. with two negators). First use table() to check out what the distribution of Single versus Bipartite negation tokens is. Then work with a subset to find out if either form of negation occurs more often in main clauses with a SVO word order (Subject-Verb-Object), compared to subclauses with a SOV order (Subject-Object-Verb).
 
 
-#### --- | exercise: catholic fertility ---####
+#### --- | exercise: catholic fertility ---#### 
 
 # Install and load the package called 'datasets'. This package contains a dataset called 'swiss', which contains Swiss fertility and socioeconomic indicators from the year 1888. Save this dataset in your working environment as a new dataframe called 'helvetica', and explore it by looking at the first 10 rows. Now extract the rows only for those districts where more than 50% of the population is catholic, and calculate the mean fertility rate for these predominantly catholic districts. Now compare it to the mean fertility rate of districts with 50% of catholics or less.
 
