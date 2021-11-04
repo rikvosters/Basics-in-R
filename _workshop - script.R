@@ -73,7 +73,7 @@ a
 
 # Alternative:
 
-a <- 2 + 7
+a = 2 + 7
 
 # Operations on save values
 
