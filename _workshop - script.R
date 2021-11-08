@@ -933,10 +933,9 @@ df
 
 #### --- | exercise: metal ---####
 
-# Load an Excel dataset ('metal_data.xlsx') on metal bands by nation and the corresponding set of metadata (metal_meta.xlsx) from your working directory (source: https://www.kaggle.com/mrpantherson/metal-by-nation). Merge the two and try to find out the following:
+# Load an Excel dataset ('metal_data.xlsx') on metal bands by nation and the corresponding set of metadata ('metal_meta.xlsx') from your working directory (source: https://www.kaggle.com/mrpantherson/metal-by-nation). Use `read_excel()` from the `readxl` package. Merge the two and try to find out the following:
 # - What is the name of the oldest Iranian metal band that is still together? For this last element (still together), use 'filter(is.na(split))': this will filter out the rows where the 'split' value is 'NA'.
 # - Are there any Mexicans metal bands who play some sort of death metal, and if so, how large is their (total) fan base?
-
 
 
 ### 5. ANALYZING TEXTUAL DATA -----
