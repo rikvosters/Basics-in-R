@@ -488,7 +488,7 @@ bb # also tibble
 #    1. each column is a variable
 #    2. each row is an observation
 
-library(tidyverse)
+library(tidyverse) # only once: install.packages("tidyverse")
 
 # Some innovations:
 
@@ -680,6 +680,9 @@ dog$OWNER_SEX
 
 # cf. as.numeric(), as.character(), etc.
 
+# fyi: convert all character vectors in dataframe to factors:
+# df %>% mutate_if(is.character, as.factor) -> df
+
 # levels
 levels(dog$OWNER_SEX)
 table(dog$OWNER_SEX)
@@ -830,6 +833,7 @@ popl %>%
 
 # sometimes useful for easier/more visual summary
 
+library(babynames)
 bb <- babynames
 bb %>%
   filter(name %in% c("Izzy", "Ricky", "Archie", "Eli", "Leo", "Freddy", "Tony", "Randy", "Frankie", "Rudy")) %>%
@@ -919,6 +923,13 @@ df
 
 # Write a loop to load all (two) data files that start with the word 'freqtabel', which contains the inaugural addresses of the last two US presidents. Bind them together with 'rbind()' into one dataframe. Then use the filter() function to check how often the word 'america' occurs in each one.
 
+#### --- | exercise: influenza ---####
+
+# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this. Finally, make a similar plot comparing the death rates per year for all of the major causes of death in the dataset. Save the last plot as a pdf.
+
+# Tip for plotting:
+# ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
+
 
 #### --- | exercise: metal ---####
 
@@ -927,9 +938,6 @@ df
 # - Are there any Mexicans metal bands who play some sort of death metal, and if so, how large is their (total) fan base?
 
 
-#### --- | exercise: influenza ---####
-
-# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this. Finally, make a similar plot comparing the death rates per year for all of the major causes of death in the dataset. Save the last plot as a pdf.
 
 ### 5. ANALYZING TEXTUAL DATA -----
 
