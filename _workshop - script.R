@@ -925,7 +925,7 @@ df
 
 #### --- | exercise: influenza ---####
 
-# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this. Finally, make a similar plot comparing the death rates per year for all of the major causes of death in the dataset. Save the last plot as a pdf.
+# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Use the option `check.names = F` when loading the data with `read.csv` to tell R to load the year numbers as they appear (and not convert them by putting an `X` in front of them). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this. Finally, make a similar plot comparing the death rates per year for all of the major causes of death in the dataset. Save the last plot as a pdf.
 
 # Tip for plotting:
 # ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
