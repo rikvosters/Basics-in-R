@@ -2108,7 +2108,7 @@ sample %>%
 
 ####--- | exercise: flights ---####
 
-# Install and load the 'flights' package, and then assign the element 'hflight' to a new dataframe of your choice. Also convert it into a tibble, and then select the variables Year, DayOfWeek, DepTime, UniqueCarrier, AirTime, ArrDelay, Dest, Distance, Cancelled, and CancellationCode, removing the others. Now, try to explore yoru data to answer the following questions:
+# Install and load the 'hflights' package, and then assign the element 'hflight' to a new dataframe of your choice. Also convert it into a tibble, and then select the variables Year, DayOfWeek, DepTime, UniqueCarrier, AirTime, ArrDelay, Dest, Distance, Cancelled, and CancellationCode, removing the others. Now, try to explore yoru data to answer the following questions:
 # Which percentage of flights was cancelled in 2011? Visualize in a barplot.
 # Calculate the percentage of flights cancelled versus the percentage of flights not cancelled, and visualize this in a simple barplot.
 # Recode CancellationCode ("carrier" = "A", "weather" = "B", "FFA" = "C", "security" = "D") and use it to find out what the major cause of flight cancellations is.
