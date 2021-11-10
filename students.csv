@@ -1,0 +1,494 @@
+﻿Year;Sex;University;Program;Students
+2010;M;Katholieke Universiteit Leuven;physics;18
+2010;M;Katholieke Universiteit Leuven;medicine;140
+2010;M;Katholieke Universiteit Leuven;geography;10
+2010;M;Katholieke Universiteit Leuven;engineering;239
+2010;M;Katholieke Universiteit Leuven;psychology;44
+2010;M;Katholieke Universiteit Leuven;law;118
+2010;M;Katholieke Universiteit Leuven;linguistics and literary studies;51
+2010;M;Universiteit Antwerpen;physics;10
+2010;M;Universiteit Antwerpen;medicine;38
+2010;M;Universiteit Antwerpen;law;79
+2010;M;Universiteit Antwerpen;linguistics and literary studies;32
+2010;M;Universiteit Gent;medicine;85
+2010;M;Universiteit Gent;psychology;60
+2010;M;Universiteit Gent;law;125
+2010;M;Universiteit Gent;linguistics and literary studies;54
+2010;M;Universiteit Hasselt;physics;13
+2010;M;Universiteit Hasselt;medicine;32
+2010;M;Vrije Universiteit Brussel;physics;4
+2010;M;Vrije Universiteit Brussel;medicine;18
+2010;M;Vrije Universiteit Brussel;geography;2
+2010;M;Vrije Universiteit Brussel;engineering;40
+2010;M;Vrije Universiteit Brussel;psychology;15
+2010;M;Vrije Universiteit Brussel;law;26
+2010;M;Vrije Universiteit Brussel;linguistics and literary studies;6
+2010;V;Katholieke Universiteit Leuven;physics;3
+2010;V;Katholieke Universiteit Leuven;medicine;203
+2010;V;Katholieke Universiteit Leuven;geography;9
+2010;V;Katholieke Universiteit Leuven;engineering;43
+2010;V;Katholieke Universiteit Leuven;psychology;254
+2010;V;Katholieke Universiteit Leuven;law;175
+2010;V;Katholieke Universiteit Leuven;linguistics and literary studies;171
+2010;V;Universiteit Antwerpen;physics;3
+2010;V;Universiteit Antwerpen;medicine;62
+2010;V;Universiteit Antwerpen;law;104
+2010;V;Universiteit Antwerpen;linguistics and literary studies;114
+2010;V;Universiteit Gent;medicine;128
+2010;V;Universiteit Gent;psychology;288
+2010;V;Universiteit Gent;law;188
+2010;V;Universiteit Gent;linguistics and literary studies;159
+2010;V;Universiteit Hasselt;medicine;52
+2010;V;Vrije Universiteit Brussel;physics;3
+2010;V;Vrije Universiteit Brussel;medicine;26
+2010;V;Vrije Universiteit Brussel;geography;2
+2010;V;Vrije Universiteit Brussel;engineering;9
+2010;V;Vrije Universiteit Brussel;psychology;69
+2010;V;Vrije Universiteit Brussel;law;46
+2010;V;Vrije Universiteit Brussel;linguistics and literary studies;38
+2011;M;Katholieke Universiteit Leuven;physics;22
+2011;M;Katholieke Universiteit Leuven;medicine;182
+2011;M;Katholieke Universiteit Leuven;geography;9
+2011;M;Katholieke Universiteit Leuven;engineering;251
+2011;M;Katholieke Universiteit Leuven;psychology;36
+2011;M;Katholieke Universiteit Leuven;law;168
+2011;M;Katholieke Universiteit Leuven;linguistics and literary studies;57
+2011;M;Universiteit Antwerpen;physics;11
+2011;M;Universiteit Antwerpen;medicine;55
+2011;M;Universiteit Antwerpen;law;79
+2011;M;Universiteit Antwerpen;linguistics and literary studies;36
+2011;M;Universiteit Gent;medicine;103
+2011;M;Universiteit Gent;psychology;59
+2011;M;Universiteit Gent;law;143
+2011;M;Universiteit Gent;linguistics and literary studies;64
+2011;M;Universiteit Hasselt;physics;11
+2011;M;Universiteit Hasselt;medicine;17
+2011;M;Vrije Universiteit Brussel;medicine;20
+2011;M;Vrije Universiteit Brussel;geography;5
+2011;M;Vrije Universiteit Brussel;engineering;35
+2011;M;Vrije Universiteit Brussel;psychology;10
+2011;M;Vrije Universiteit Brussel;law;44
+2011;M;Vrije Universiteit Brussel;linguistics and literary studies;13
+2011;V;Katholieke Universiteit Leuven;physics;4
+2011;V;Katholieke Universiteit Leuven;medicine;227
+2011;V;Katholieke Universiteit Leuven;geography;8
+2011;V;Katholieke Universiteit Leuven;engineering;37
+2011;V;Katholieke Universiteit Leuven;psychology;246
+2011;V;Katholieke Universiteit Leuven;law;238
+2011;V;Katholieke Universiteit Leuven;linguistics and literary studies;169
+2011;V;Universiteit Antwerpen;physics;3
+2011;V;Universiteit Antwerpen;medicine;61
+2011;V;Universiteit Antwerpen;law;158
+2011;V;Universiteit Antwerpen;linguistics and literary studies;120
+2011;V;Universiteit Gent;medicine;157
+2011;V;Universiteit Gent;psychology;283
+2011;V;Universiteit Gent;law;206
+2011;V;Universiteit Gent;linguistics and literary studies;171
+2011;V;Universiteit Hasselt;physics;1
+2011;V;Universiteit Hasselt;medicine;42
+2011;V;Vrije Universiteit Brussel;medicine;25
+2011;V;Vrije Universiteit Brussel;geography;2
+2011;V;Vrije Universiteit Brussel;engineering;6
+2011;V;Vrije Universiteit Brussel;psychology;74
+2011;V;Vrije Universiteit Brussel;law;82
+2011;V;Vrije Universiteit Brussel;linguistics and literary studies;41
+2012;M;Katholieke Universiteit Leuven;physics;27
+2012;M;Katholieke Universiteit Leuven;medicine;158
+2012;M;Katholieke Universiteit Leuven;geography;20
+2012;M;Katholieke Universiteit Leuven;engineering;235
+2012;M;Katholieke Universiteit Leuven;psychology;40
+2012;M;Katholieke Universiteit Leuven;law;161
+2012;M;Katholieke Universiteit Leuven;linguistics and literary studies;49
+2012;M;Universiteit Antwerpen;physics;21
+2012;M;Universiteit Antwerpen;medicine;46
+2012;M;Universiteit Antwerpen;law;96
+2012;M;Universiteit Antwerpen;linguistics and literary studies;37
+2012;M;Universiteit Gent;medicine;79
+2012;M;Universiteit Gent;psychology;63
+2012;M;Universiteit Gent;law;150
+2012;M;Universiteit Gent;linguistics and literary studies;62
+2012;M;Universiteit Hasselt;physics;11
+2012;M;Universiteit Hasselt;medicine;41
+2012;M;Vrije Universiteit Brussel;medicine;25
+2012;M;Vrije Universiteit Brussel;geography;5
+2012;M;Vrije Universiteit Brussel;engineering;31
+2012;M;Vrije Universiteit Brussel;psychology;24
+2012;M;Vrije Universiteit Brussel;law;42
+2012;M;Vrije Universiteit Brussel;linguistics and literary studies;8
+2012;V;Katholieke Universiteit Leuven;physics;3
+2012;V;Katholieke Universiteit Leuven;medicine;243
+2012;V;Katholieke Universiteit Leuven;geography;8
+2012;V;Katholieke Universiteit Leuven;engineering;57
+2012;V;Katholieke Universiteit Leuven;psychology;227
+2012;V;Katholieke Universiteit Leuven;law;252
+2012;V;Katholieke Universiteit Leuven;linguistics and literary studies;176
+2012;V;Universiteit Antwerpen;physics;4
+2012;V;Universiteit Antwerpen;medicine;59
+2012;V;Universiteit Antwerpen;law;135
+2012;V;Universiteit Antwerpen;linguistics and literary studies;130
+2012;V;Universiteit Gent;medicine;131
+2012;V;Universiteit Gent;psychology;273
+2012;V;Universiteit Gent;law;183
+2012;V;Universiteit Gent;linguistics and literary studies;176
+2012;V;Universiteit Hasselt;physics;2
+2012;V;Universiteit Hasselt;medicine;36
+2012;V;Vrije Universiteit Brussel;medicine;26
+2012;V;Vrije Universiteit Brussel;geography;4
+2012;V;Vrije Universiteit Brussel;engineering;5
+2012;V;Vrije Universiteit Brussel;psychology;87
+2012;V;Vrije Universiteit Brussel;law;75
+2012;V;Vrije Universiteit Brussel;linguistics and literary studies;40
+2013;M;Katholieke Universiteit Leuven;physics;33
+2013;M;Katholieke Universiteit Leuven;medicine;200
+2013;M;Katholieke Universiteit Leuven;geography;12
+2013;M;Katholieke Universiteit Leuven;business economics;140
+2013;M;Katholieke Universiteit Leuven;engineering;270
+2013;M;Katholieke Universiteit Leuven;psychology;42
+2013;M;Katholieke Universiteit Leuven;law;126
+2013;M;Katholieke Universiteit Leuven;linguistics and literary studies;47
+2013;M;Universiteit Antwerpen;physics;18
+2013;M;Universiteit Antwerpen;medicine;51
+2013;M;Universiteit Antwerpen;law;74
+2013;M;Universiteit Antwerpen;linguistics and literary studies;27
+2013;M;Universiteit Gent;medicine;99
+2013;M;Universiteit Gent;business economics;109
+2013;M;Universiteit Gent;psychology;57
+2013;M;Universiteit Gent;law;136
+2013;M;Universiteit Gent;linguistics and literary studies;57
+2013;M;Universiteit Hasselt;physics;4
+2013;M;Universiteit Hasselt;medicine;26
+2013;M;Vrije Universiteit Brussel;medicine;14
+2013;M;Vrije Universiteit Brussel;geography;4
+2013;M;Vrije Universiteit Brussel;engineering;30
+2013;M;Vrije Universiteit Brussel;psychology;15
+2013;M;Vrije Universiteit Brussel;law;52
+2013;M;Vrije Universiteit Brussel;linguistics and literary studies;7
+2013;V;Katholieke Universiteit Leuven;physics;11
+2013;V;Katholieke Universiteit Leuven;medicine;186
+2013;V;Katholieke Universiteit Leuven;geography;11
+2013;V;Katholieke Universiteit Leuven;business economics;105
+2013;V;Katholieke Universiteit Leuven;engineering;41
+2013;V;Katholieke Universiteit Leuven;psychology;283
+2013;V;Katholieke Universiteit Leuven;law;200
+2013;V;Katholieke Universiteit Leuven;linguistics and literary studies;178
+2013;V;Universiteit Antwerpen;physics;7
+2013;V;Universiteit Antwerpen;medicine;52
+2013;V;Universiteit Antwerpen;law;124
+2013;V;Universiteit Antwerpen;linguistics and literary studies;133
+2013;V;Universiteit Gent;medicine;128
+2013;V;Universiteit Gent;business economics;103
+2013;V;Universiteit Gent;psychology;274
+2013;V;Universiteit Gent;law;197
+2013;V;Universiteit Gent;linguistics and literary studies;187
+2013;V;Universiteit Hasselt;medicine;35
+2013;V;Vrije Universiteit Brussel;medicine;23
+2013;V;Vrije Universiteit Brussel;geography;1
+2013;V;Vrije Universiteit Brussel;engineering;13
+2013;V;Vrije Universiteit Brussel;psychology;94
+2013;V;Vrije Universiteit Brussel;law;71
+2013;V;Vrije Universiteit Brussel;linguistics and literary studies;28
+2014;M;Katholieke Universiteit Leuven;physics;34
+2014;M;Katholieke Universiteit Leuven;medicine;136
+2014;M;Katholieke Universiteit Leuven;geography;14
+2014;M;Katholieke Universiteit Leuven;business economics;141
+2014;M;Katholieke Universiteit Leuven;engineering;302
+2014;M;Katholieke Universiteit Leuven;psychology;46
+2014;M;Katholieke Universiteit Leuven;law;152
+2014;M;Katholieke Universiteit Leuven;linguistics and literary studies;58
+2014;M;Universiteit Antwerpen;physics;17
+2014;M;Universiteit Antwerpen;medicine;57
+2014;M;Universiteit Antwerpen;law;80
+2014;M;Universiteit Antwerpen;linguistics and literary studies;19
+2014;M;Universiteit Gent;medicine;92
+2014;M;Universiteit Gent;business economics;159
+2014;M;Universiteit Gent;psychology;52
+2014;M;Universiteit Gent;law;142
+2014;M;Universiteit Gent;linguistics and literary studies;51
+2014;M;Universiteit Hasselt;physics;9
+2014;M;Universiteit Hasselt;medicine;37
+2014;M;Vrije Universiteit Brussel;medicine;20
+2014;M;Vrije Universiteit Brussel;geography;8
+2014;M;Vrije Universiteit Brussel;engineering;28
+2014;M;Vrije Universiteit Brussel;psychology;24
+2014;M;Vrije Universiteit Brussel;law;48
+2014;M;Vrije Universiteit Brussel;linguistics and literary studies;10
+2014;V;Katholieke Universiteit Leuven;physics;2
+2014;V;Katholieke Universiteit Leuven;medicine;181
+2014;V;Katholieke Universiteit Leuven;geography;8
+2014;V;Katholieke Universiteit Leuven;business economics;114
+2014;V;Katholieke Universiteit Leuven;engineering;48
+2014;V;Katholieke Universiteit Leuven;psychology;221
+2014;V;Katholieke Universiteit Leuven;law;225
+2014;V;Katholieke Universiteit Leuven;linguistics and literary studies;153
+2014;V;Universiteit Antwerpen;physics;2
+2014;V;Universiteit Antwerpen;medicine;67
+2014;V;Universiteit Antwerpen;law;137
+2014;V;Universiteit Antwerpen;linguistics and literary studies;111
+2014;V;Universiteit Gent;medicine;131
+2014;V;Universiteit Gent;business economics;137
+2014;V;Universiteit Gent;psychology;253
+2014;V;Universiteit Gent;law;193
+2014;V;Universiteit Gent;linguistics and literary studies;160
+2014;V;Universiteit Hasselt;medicine;38
+2014;V;Vrije Universiteit Brussel;medicine;32
+2014;V;Vrije Universiteit Brussel;geography;2
+2014;V;Vrije Universiteit Brussel;engineering;7
+2014;V;Vrije Universiteit Brussel;psychology;95
+2014;V;Vrije Universiteit Brussel;law;83
+2014;V;Vrije Universiteit Brussel;linguistics and literary studies;33
+2015;M;Katholieke Universiteit Leuven;physics;25
+2015;M;Katholieke Universiteit Leuven;medicine;144
+2015;M;Katholieke Universiteit Leuven;geography;14
+2015;M;Katholieke Universiteit Leuven;business economics;171
+2015;M;Katholieke Universiteit Leuven;engineering;275
+2015;M;Katholieke Universiteit Leuven;psychology;37
+2015;M;Katholieke Universiteit Leuven;law;152
+2015;M;Katholieke Universiteit Leuven;linguistics and literary studies;43
+2015;M;Universiteit Antwerpen;physics;15
+2015;M;Universiteit Antwerpen;medicine;57
+2015;M;Universiteit Antwerpen;law;80
+2015;M;Universiteit Antwerpen;linguistics and literary studies;23
+2015;M;Universiteit Gent;medicine;119
+2015;M;Universiteit Gent;business economics;207
+2015;M;Universiteit Gent;psychology;39
+2015;M;Universiteit Gent;law;154
+2015;M;Universiteit Gent;linguistics and literary studies;48
+2015;M;Universiteit Hasselt;physics;10
+2015;M;Universiteit Hasselt;medicine;34
+2015;M;Vrije Universiteit Brussel;medicine;28
+2015;M;Vrije Universiteit Brussel;geography;4
+2015;M;Vrije Universiteit Brussel;engineering;31
+2015;M;Vrije Universiteit Brussel;psychology;21
+2015;M;Vrije Universiteit Brussel;law;49
+2015;M;Vrije Universiteit Brussel;linguistics and literary studies;7
+2015;V;Katholieke Universiteit Leuven;physics;5
+2015;V;Katholieke Universiteit Leuven;medicine;230
+2015;V;Katholieke Universiteit Leuven;geography;9
+2015;V;Katholieke Universiteit Leuven;business economics;123
+2015;V;Katholieke Universiteit Leuven;engineering;49
+2015;V;Katholieke Universiteit Leuven;psychology;204
+2015;V;Katholieke Universiteit Leuven;law;243
+2015;V;Katholieke Universiteit Leuven;linguistics and literary studies;125
+2015;V;Universiteit Antwerpen;physics;2
+2015;V;Universiteit Antwerpen;medicine;84
+2015;V;Universiteit Antwerpen;law;156
+2015;V;Universiteit Antwerpen;linguistics and literary studies;93
+2015;V;Universiteit Gent;medicine;168
+2015;V;Universiteit Gent;business economics;185
+2015;V;Universiteit Gent;psychology;255
+2015;V;Universiteit Gent;law;215
+2015;V;Universiteit Gent;linguistics and literary studies;149
+2015;V;Universiteit Hasselt;medicine;49
+2015;V;Vrije Universiteit Brussel;medicine;27
+2015;V;Vrije Universiteit Brussel;geography;5
+2015;V;Vrije Universiteit Brussel;engineering;5
+2015;V;Vrije Universiteit Brussel;psychology;77
+2015;V;Vrije Universiteit Brussel;law;91
+2015;V;Vrije Universiteit Brussel;linguistics and literary studies;28
+2016;M;Katholieke Universiteit Leuven;physics;34
+2016;M;Katholieke Universiteit Leuven;medicine;157
+2016;M;Katholieke Universiteit Leuven;geography;12
+2016;M;Katholieke Universiteit Leuven;business economics;166
+2016;M;Katholieke Universiteit Leuven;engineering;271
+2016;M;Katholieke Universiteit Leuven;psychology;35
+2016;M;Katholieke Universiteit Leuven;law;159
+2016;M;Katholieke Universiteit Leuven;linguistics and literary studies;48
+2016;M;Universiteit Antwerpen;physics;16
+2016;M;Universiteit Antwerpen;medicine;66
+2016;M;Universiteit Antwerpen;law;87
+2016;M;Universiteit Antwerpen;linguistics and literary studies;26
+2016;M;Universiteit Gent;medicine;123
+2016;M;Universiteit Gent;business economics;208
+2016;M;Universiteit Gent;psychology;64
+2016;M;Universiteit Gent;law;91
+2016;M;Universiteit Gent;linguistics and literary studies;53
+2016;M;Universiteit Hasselt;physics;11
+2016;M;Universiteit Hasselt;medicine;41
+2016;M;Vrije Universiteit Brussel;medicine;30
+2016;M;Vrije Universiteit Brussel;geography;8
+2016;M;Vrije Universiteit Brussel;engineering;38
+2016;M;Vrije Universiteit Brussel;psychology;23
+2016;M;Vrije Universiteit Brussel;law;40
+2016;M;Vrije Universiteit Brussel;linguistics and literary studies;9
+2016;V;Katholieke Universiteit Leuven;physics;8
+2016;V;Katholieke Universiteit Leuven;medicine;253
+2016;V;Katholieke Universiteit Leuven;geography;10
+2016;V;Katholieke Universiteit Leuven;business economics;118
+2016;V;Katholieke Universiteit Leuven;engineering;55
+2016;V;Katholieke Universiteit Leuven;psychology;236
+2016;V;Katholieke Universiteit Leuven;law;260
+2016;V;Katholieke Universiteit Leuven;linguistics and literary studies;102
+2016;V;Universiteit Antwerpen;physics;6
+2016;V;Universiteit Antwerpen;medicine;67
+2016;V;Universiteit Antwerpen;law;156
+2016;V;Universiteit Antwerpen;linguistics and literary studies;76
+2016;V;Universiteit Gent;medicine;190
+2016;V;Universiteit Gent;business economics;195
+2016;V;Universiteit Gent;psychology;287
+2016;V;Universiteit Gent;law;141
+2016;V;Universiteit Gent;linguistics and literary studies;160
+2016;V;Universiteit Hasselt;physics;1
+2016;V;Universiteit Hasselt;medicine;54
+2016;V;Vrije Universiteit Brussel;medicine;34
+2016;V;Vrije Universiteit Brussel;geography;2
+2016;V;Vrije Universiteit Brussel;engineering;15
+2016;V;Vrije Universiteit Brussel;psychology;101
+2016;V;Vrije Universiteit Brussel;law;71
+2016;V;Vrije Universiteit Brussel;linguistics and literary studies;27
+2017;M;Katholieke Universiteit Leuven;physics;27
+2017;M;Katholieke Universiteit Leuven;medicine;173
+2017;M;Katholieke Universiteit Leuven;geography;11
+2017;M;Katholieke Universiteit Leuven;business economics;144
+2017;M;Katholieke Universiteit Leuven;engineering;253
+2017;M;Katholieke Universiteit Leuven;psychology;33
+2017;M;Katholieke Universiteit Leuven;law;133
+2017;M;Katholieke Universiteit Leuven;linguistics and literary studies;49
+2017;M;Universiteit Antwerpen;physics;16
+2017;M;Universiteit Antwerpen;medicine;33
+2017;M;Universiteit Antwerpen;law;80
+2017;M;Universiteit Antwerpen;linguistics and literary studies;21
+2017;M;Universiteit Gent;medicine;91
+2017;M;Universiteit Gent;business economics;167
+2017;M;Universiteit Gent;psychology;61
+2017;M;Universiteit Gent;law;131
+2017;M;Universiteit Gent;linguistics and literary studies;41
+2017;M;Universiteit Hasselt;physics;5
+2017;M;Universiteit Hasselt;medicine;26
+2017;M;Universiteit Hasselt;business economics;21
+2017;M;Vrije Universiteit Brussel;medicine;26
+2017;M;Vrije Universiteit Brussel;geography;2
+2017;M;Vrije Universiteit Brussel;engineering;35
+2017;M;Vrije Universiteit Brussel;psychology;17
+2017;M;Vrije Universiteit Brussel;law;49
+2017;M;Vrije Universiteit Brussel;linguistics and literary studies;4
+2017;V;Katholieke Universiteit Leuven;physics;6
+2017;V;Katholieke Universiteit Leuven;medicine;254
+2017;V;Katholieke Universiteit Leuven;geography;10
+2017;V;Katholieke Universiteit Leuven;business economics;151
+2017;V;Katholieke Universiteit Leuven;engineering;59
+2017;V;Katholieke Universiteit Leuven;psychology;174
+2017;V;Katholieke Universiteit Leuven;law;238
+2017;V;Katholieke Universiteit Leuven;linguistics and literary studies;116
+2017;V;Universiteit Antwerpen;physics;7
+2017;V;Universiteit Antwerpen;medicine;46
+2017;V;Universiteit Antwerpen;law;124
+2017;V;Universiteit Antwerpen;linguistics and literary studies;86
+2017;V;Universiteit Gent;medicine;164
+2017;V;Universiteit Gent;business economics;135
+2017;V;Universiteit Gent;psychology;294
+2017;V;Universiteit Gent;law;170
+2017;V;Universiteit Gent;linguistics and literary studies;138
+2017;V;Universiteit Hasselt;physics;1
+2017;V;Universiteit Hasselt;medicine;43
+2017;V;Universiteit Hasselt;business economics;24
+2017;V;Vrije Universiteit Brussel;medicine;27
+2017;V;Vrije Universiteit Brussel;geography;1
+2017;V;Vrije Universiteit Brussel;engineering;5
+2017;V;Vrije Universiteit Brussel;psychology;108
+2017;V;Vrije Universiteit Brussel;law;84
+2017;V;Vrije Universiteit Brussel;linguistics and literary studies;23
+2018;M;Katholieke Universiteit Leuven;physics;34
+2018;M;Katholieke Universiteit Leuven;medicine;167
+2018;M;Katholieke Universiteit Leuven;geography;14
+2018;M;Katholieke Universiteit Leuven;business economics;163
+2018;M;Katholieke Universiteit Leuven;engineering;280
+2018;M;Katholieke Universiteit Leuven;psychology;27
+2018;M;Katholieke Universiteit Leuven;law;120
+2018;M;Katholieke Universiteit Leuven;linguistics and literary studies;36
+2018;M;Universiteit Antwerpen;physics;20
+2018;M;Universiteit Antwerpen;medicine;55
+2018;M;Universiteit Antwerpen;law;69
+2018;M;Universiteit Antwerpen;linguistics and literary studies;13
+2018;M;Universiteit Gent;medicine;124
+2018;M;Universiteit Gent;business economics;175
+2018;M;Universiteit Gent;psychology;56
+2018;M;Universiteit Gent;law;96
+2018;M;Universiteit Gent;linguistics and literary studies;38
+2018;M;Universiteit Hasselt;physics;14
+2018;M;Universiteit Hasselt;medicine;29
+2018;M;Universiteit Hasselt;business economics;30
+2018;M;Vrije Universiteit Brussel;medicine;25
+2018;M;Vrije Universiteit Brussel;geography;2
+2018;M;Vrije Universiteit Brussel;engineering;26
+2018;M;Vrije Universiteit Brussel;psychology;18
+2018;M;Vrije Universiteit Brussel;law;47
+2018;M;Vrije Universiteit Brussel;linguistics and literary studies;5
+2018;V;Katholieke Universiteit Leuven;physics;9
+2018;V;Katholieke Universiteit Leuven;medicine;253
+2018;V;Katholieke Universiteit Leuven;geography;12
+2018;V;Katholieke Universiteit Leuven;business economics;138
+2018;V;Katholieke Universiteit Leuven;engineering;56
+2018;V;Katholieke Universiteit Leuven;psychology;202
+2018;V;Katholieke Universiteit Leuven;law;221
+2018;V;Katholieke Universiteit Leuven;linguistics and literary studies;112
+2018;V;Universiteit Antwerpen;physics;3
+2018;V;Universiteit Antwerpen;medicine;67
+2018;V;Universiteit Antwerpen;law;132
+2018;V;Universiteit Antwerpen;linguistics and literary studies;95
+2018;V;Universiteit Gent;medicine;201
+2018;V;Universiteit Gent;business economics;195
+2018;V;Universiteit Gent;psychology;305
+2018;V;Universiteit Gent;law;196
+2018;V;Universiteit Gent;linguistics and literary studies;110
+2018;V;Universiteit Hasselt;medicine;44
+2018;V;Universiteit Hasselt;business economics;44
+2018;V;Vrije Universiteit Brussel;medicine;33
+2018;V;Vrije Universiteit Brussel;geography;2
+2018;V;Vrije Universiteit Brussel;engineering;8
+2018;V;Vrije Universiteit Brussel;psychology;95
+2018;V;Vrije Universiteit Brussel;law;99
+2018;V;Vrije Universiteit Brussel;linguistics and literary studies;15
+2019;M;Katholieke Universiteit Leuven;physics;28
+2019;M;Katholieke Universiteit Leuven;medicine;198
+2019;M;Katholieke Universiteit Leuven;geography;11
+2019;M;Katholieke Universiteit Leuven;business economics;149
+2019;M;Katholieke Universiteit Leuven;engineering;275
+2019;M;Katholieke Universiteit Leuven;psychology;42
+2019;M;Katholieke Universiteit Leuven;law;142
+2019;M;Katholieke Universiteit Leuven;linguistics and literary studies;28
+2019;M;Universiteit Antwerpen;physics;18
+2019;M;Universiteit Antwerpen;medicine;58
+2019;M;Universiteit Antwerpen;law;71
+2019;M;Universiteit Antwerpen;linguistics and literary studies;22
+2019;M;Universiteit Gent;medicine;134
+2019;M;Universiteit Gent;business economics;188
+2019;M;Universiteit Gent;engineering;2
+2019;M;Universiteit Gent;psychology;60
+2019;M;Universiteit Gent;law;115
+2019;M;Universiteit Gent;linguistics and literary studies;33
+2019;M;Universiteit Hasselt;physics;11
+2019;M;Universiteit Hasselt;medicine;25
+2019;M;Universiteit Hasselt;business economics;53
+2019;M;Vrije Universiteit Brussel;medicine;16
+2019;M;Vrije Universiteit Brussel;geography;5
+2019;M;Vrije Universiteit Brussel;engineering;27
+2019;M;Vrije Universiteit Brussel;psychology;21
+2019;M;Vrije Universiteit Brussel;law;59
+2019;M;Vrije Universiteit Brussel;linguistics and literary studies;5
+2019;V;Katholieke Universiteit Leuven;physics;9
+2019;V;Katholieke Universiteit Leuven;medicine;291
+2019;V;Katholieke Universiteit Leuven;geography;12
+2019;V;Katholieke Universiteit Leuven;business economics;111
+2019;V;Katholieke Universiteit Leuven;engineering;55
+2019;V;Katholieke Universiteit Leuven;psychology;265
+2019;V;Katholieke Universiteit Leuven;law;237
+2019;V;Katholieke Universiteit Leuven;linguistics and literary studies;117
+2019;V;Universiteit Antwerpen;physics;3
+2019;V;Universiteit Antwerpen;medicine;86
+2019;V;Universiteit Antwerpen;law;120
+2019;V;Universiteit Antwerpen;linguistics and literary studies;96
+2019;V;Universiteit Gent;medicine;254
+2019;V;Universiteit Gent;business economics;196
+2019;V;Universiteit Gent;engineering;6
+2019;V;Universiteit Gent;psychology;431
+2019;V;Universiteit Gent;law;175
+2019;V;Universiteit Gent;linguistics and literary studies;136
+2019;V;Universiteit Hasselt;physics;1
+2019;V;Universiteit Hasselt;medicine;50
+2019;V;Universiteit Hasselt;business economics;56
+2019;V;Vrije Universiteit Brussel;medicine;29
+2019;V;Vrije Universiteit Brussel;geography;5
+2019;V;Vrije Universiteit Brussel;engineering;7
+2019;V;Vrije Universiteit Brussel;psychology;122
+2019;V;Vrije Universiteit Brussel;law;120
+2019;V;Vrije Universiteit Brussel;linguistics and literary studies;24

@@ -955,7 +955,7 @@ rm(list = ls(all = TRUE))
 # (= e.g. each line as one element)
 
 # per word (no specification of 'sep' needed)
-corpus.file.lower.words <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0))
+corpus.file.lower.words <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), quote = "")
 
 # per line (sep = "\n")
 corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")
@@ -971,7 +971,7 @@ corpus.file
 corpus.file.lower <- tolower(scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")) # opposite: toupper()
 
 # encoding problems:
-corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n", fileEncoding = "UNICODE-1-1") # argument: fileEncoding=""
+# corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n", fileEncoding = "UNICODE-1-1") # argument: fileEncoding=""
 corpus.file
 iconvlist() # all encoding options for platform
 
@@ -1045,8 +1045,29 @@ grepl() # same, but returns a logical vector (see later for subsetting of corpus
 # Write a regex to search for all historical spelling variants of the Dutch PersPron 'ik', where the <i> can also take the form of <j> or <ij>, and the <k> could also occur as <ck> (but not as <c>). Test it on the words: "ik", "ick", "jk", "jck", "ijck", "Ik", "Ick", "Jk", "Jck", "Ijck", "ic".
 
 # Write a regex to capture all words (singular and plural) ending in the suffix -ism. Test it on the words: "fascism", "Bushisms", "antidisestablishmentarianism", "prism".
+vecky <- c("fascism", "Bushisms", "antidisestablishmentarianism", "prism", "cow")
+grep("REGEX", vecky, value=T)
 
 # Write a regex to capture any word starting in a cluster of three or more consonants and exactly one vowel grapheme. Test it on the words: "spring", "schmuck", "strudel", "scared", "straight".
+
+# Gsub 
+
+gsub("searchpattern", "replacement", text)   # (global substitution)
+# argument 1: what to search for
+# argument 2: what to replace it by
+# argument 3: where to search for it
+# optional argument value=T to get the element itself (instead of position)
+# optional argument ignore.case=TRUE to ignore case (default=FALSE)
+# optional argument always set to perl=T (perl-compatible regex)
+
+witch
+gsub("she", "he", witch, perl=T)
+# remember to assign it to a new element if you want to save it
+male_witch <- gsub("she", "he", witch, perl=T) 
+
+gsub("axe", "\taxe\t", witch, perl=T) # add tabs around
+#  \t  tab stop
+#  \n  new line
 
 
 #### --- | exercise: gsub GerManC---####
@@ -1103,10 +1124,10 @@ witch_POS %>%
   select(token_id, token, lemma, upos)
 
 # also for other languages:
-udmodel <- udpipe_download_model(language = "dutch")
+udmodel <- ?udpipe_download_model(language = "dutch")
 NL <- udpipe("De regering besliste in juni om alle inwoners gratis treinritten aan te bieden", "dutch")
 NL
-
+udmodel <- udpipe_download_model(language = "dutch")
 NL %>%
   select(token_id, token, lemma, upos)
 
@@ -1163,7 +1184,7 @@ obama
 # new freq list based on new corpus
 freq.obama <- sort(table(obama), decreasing = T)
 # 10 most frequent tokens
-freq.obama[1:10]
+freq.obama[1:75]
 
 # idem trump
 trump <- gsub("[,.'…\"”)(“‘’;:!?]", "", trump, perl = TRUE)
