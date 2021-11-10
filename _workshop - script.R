@@ -139,7 +139,7 @@ rm(list = ls(all = TRUE))
 
 # set working directory
 setwd("")
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2020.05 DSh workshop - Basics in R/Basics-in-R")
+setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2021.11 DSh workshop - Basics in R/Basics-in-R")
 getwd()
 # Windows: setwd(choose.dir())
 # Linux: tk_choose.files() does same thing - library(tcltk)
@@ -427,7 +427,7 @@ head(OE, 3) # specify number of rows
 # TYPE 1: CSV - comma-separated (text) files
 
 # be sure to set the working directory (or give a full path)
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2020.05 DSh workshop - Basics in R/Basics-in-R")
+setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2021.11 DSh workshop - Basics in R/Basics-in-R")
 
 # load
 shark <- read.csv("SharkAttacks_sample.csv") # based on: https://data.world/shruti-prabhu/shark-attacks
@@ -2228,17 +2228,23 @@ tapply(tt$Fare, tt$Sex, median) # so median difference is significant
 plot(tt$Fare ~ tt$Age)
 abline(lm(Fare ~ Age, data=tt), col="red", lwd=2)
 
-# correlation score:
-cor(tt$Fare, tt$Age, use = "complete.obs") # ignore NA's: use = "complete.obs"s
-# very slight positive correlation
+# ggplot:
+tt %>% 
+  ggplot(aes(x = Age, y = Fare)) +
+  geom_point() +
+  geom_smooth(method = "lm")
 
 # assumption of normality
 shapiro.test(tt$Age); shapiro.test(tt$Fare) # if p < 0.05, then NOT normally distributed
 
-# cor.test(tt$Fare, tt$Age) # if normality had not been violated
+# if normality had not been violated
+# cor(tt$Fare, tt$Age, use = "complete.obs")
+# cor.test(tt$Fare, tt$Age) 
 
-# Spearman’s rank correlation
 # alternative (reduce to ordinal): Spearman's rho 
+# Spearman’s rank correlation - correlation score:
+cor(tt$Fare, tt$Age, use = "complete.obs", method = "spearman") # ignore NA's: use = "complete.obs"s
+# very slight positive correlation
 cor.test(tt$Fare, tt$Age, method="spearman") # sign. but weak correlation
 
 # notice:
@@ -2261,4 +2267,4 @@ summary(model)
 
 ####--- | exercise: female chess players ---#####
 
-# Load a dataframe (source: https://www.kaggle.com/vikasojha98/top-women-chess-players) with recent scores by female chess players. Read it as csv and convert it to a tibble, but remove the variables 'Inactive_flag' and 'Gender'. Then, split the variable 'Age' up into 3 predefined groups (young = under 30, middle = 30-60, older = 60+), and split variable 'Standard_Rating' into 3 groups ("low", "medium", "high" -- allowing R to determine the exact cut-off points itself). Next, check out a possible effect of the (now) ordinal variable 'Age' on the ordinal variable 'Rating' -- explore numerically, graphically, and statistically. Finally, convert the dataset from a wide to a long format, and plot year of birth and rating (but only for the 'Blitz_rating' type), for both Russian (RUS) and Polish (POL) players in different colors, and add a LOESS smoother (method = "loess") for each group.
+# Load a dataframe (source: https://www.kaggle.com/vikasojha98/top-women-chess-players) with recent scores by female chess players. Read it as csv and convert it to a tibble, but remove the variables 'Inactive_flag' and 'Gender'. Then, split the variable 'Age' up into 3 predefined groups (young = under 30, middle = 30-60, older = 60+), and split variable 'Standard_Rating' into 3 groups ("low", "medium", "high" -- allowing R to determine the exact cut-off points itself). Next, check out a possible effect of the (now) ordinal variable 'Age' on the ordinal variable 'Rating' -- explore numerically, graphically, and statistically. Finally, convert the dataset from a wide to a long format, and plot year of birth and rating (but only for the 'Blitz_rating' type), for Russian (RUS), Polish (POL) and Chinese (CHN) players in different colors, and add a LOESS smoother (method = "loess") for each group.
