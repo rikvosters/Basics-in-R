@@ -1534,7 +1534,7 @@ class(tt$Survived)
 class(tt$Class)
 tt$Survived <- as.factor(tt$Survived)
 tt$Class <- as.factor(tt$Class)
-
+tt$Sex <- as.factor(tt$Sex)
 # Check order of factor levels
 levels(tt$Embarked)
 levels(tt$Class)
@@ -1626,7 +1626,7 @@ mytable <- function(dv, iv) {
 mytable(tt$Survived, tt$Sex)
 
 # add more independent variables?
-ftable(tt$Class, tt$Sex, tt$Survived) 
+table(tt$Class, tt$Sex, tt$Survived) 
 round(prop.table(ftable(tt$Class, tt$Sex, tt$Survived) , 1), 2)
 
 # ASIDE: FROM NUMERIC TO CATEGORICAL - BINNING
@@ -1657,7 +1657,7 @@ round(prop.table(table(tt$Survived, tt$Age_fct), 2), 3)*100
 
 # visualizing one numeric variable
 
-hist(tt$Fare)
+hist(tt$Fare) # breaks option
 
 # cf. also: 
 library(rcompanion)
@@ -1702,7 +1702,7 @@ plot(tt$Survived ~ tt$Embarked, xlab = "Port of Embarkment",
 
 # option: colors
 plot(tt$Survived ~ tt$Embarked, xlab = "Port of Embarkment",
-     ylab = "Survived", col=c("green", "darkgreen"))
+     ylab = "Survived", col=c("grey40", "grey80"))
 
 # option: titles
 plot(tt$Survived ~ tt$Embarked, xlab = "Port of Embarkment",
@@ -1942,8 +1942,8 @@ tt %>%
   geom_histogram(bins = 50) 
 
 tt %>% 
-  ggplot() +
-  geom_qq(aes(sample = Fare))
+  ggplot(aes(sample = Fare)) +
+  geom_qq()
 
 # SCATTER PLOTS
 
@@ -1973,7 +1973,7 @@ tt %>%
 tt %>% 
   ggplot(aes(x = Age, y = Fare)) +
   geom_point() +
-  facet_wrap(~ Class)
+  facet_grid(. ~ Class) # facet_grid(Embarked ~ Class)
 
 # jitter
 
@@ -2082,7 +2082,7 @@ tt %>%
 
 tt %>% 
   ggplot(aes(x = Survived, y = Age)) +
-  geom_violin(fill="gold")
+  geom_violin(fill="gold") 
 
 # MOSAIC PLOTS
 
