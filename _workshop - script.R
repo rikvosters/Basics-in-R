@@ -2104,7 +2104,7 @@ sample %>%
 
 ####--- | exercise: influenza ---####
 
-# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this using ggplot. 
+# Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this using ggplot. Next, calculate the mean death rate per cause of death, and plot this in a barplot, for which you chose a custom theme and an appropriate title plus axis labels. Finally, make a plot comparing the death rates per year for different causes, and save it as a PDF file with the name "death.pdf".
 
 ####--- | exercise: flights ---####
 
@@ -2115,6 +2115,15 @@ sample %>%
 # Plot the distance versus the arrival delay for all short-haul flights (i.e. with a total distance under 500 miles).
 # Try to find out what the total airtime is per weekday, for the AA (American Airlines) and EV (ExpressJet) carriers. Plot this in a barplot with a different facet for each of the two carriers.
 # Make a boxplot and a violin plot of the arrival delay for airline companies AA (American Airlines), DL (Delta) and US (US Airways), so you can check out which of these three companies holds the record in terms of arrival delay.
+
+####--- | exercise: student numbers ---####
+
+# Load a dataset with student enrollments for several bachelor programs across the five Flemish universities ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/students.csv"; source: Dataloep Vlaanderen). Convert it to a tibble and familiarize yourself with the data. Then carry out the following analyses:
+# 1. Make a boxplot of student numbers per program. Give the boxes a nice color, and turn the boxplot around so the labels of the programs can be read horizontally.
+# 2. Produce a histograms with student numbers, but with a different facet window for each university
+# 3. Calculate the total number of students per university per year. Plot a smoother for these data, with one smoother line per university.
+# 4. Make a table with the student numbers per program for all universities except for Hasselt, and split up for gender: we want to be able to compare the bars for male versus female students side by side in the same plot.
+# 5. Divide student groups into small (under 30 students), medium (30-100 students) and large (100 or more students). Then visualize the proportion of small, medium and large student group programs per university in a filled barplot.
 
 
 ### 7. BASIC STATISTICS -----
