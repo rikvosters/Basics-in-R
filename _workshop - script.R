@@ -2122,7 +2122,7 @@ sample %>%
 # 1. Make a boxplot of student numbers per program. Give the boxes a nice color, and turn the boxplot around so the labels of the programs can be read horizontally.
 # 2. Produce a histograms with student numbers, but with a different facet window for each university
 # 3. Calculate the total number of students per university per year. Plot a smoother for these data, with one smoother line per university.
-# 4. Make a table with the student numbers per program for all universities except for Hasselt, and split up for gender: we want to be able to compare the bars for male versus female students side by side in the same plot.
+# 4. Make a table with the mean student numbers per program for all universities except for Hasselt, split up for gender: we want to be able to compare the bars for male versus female students side by side in the same plot.
 # 5. Divide student groups into small (under 30 students), medium (30-100 students) and large (100 or more students). Then visualize the proportion of small, medium and large student group programs per university in a filled barplot.
 
 
