@@ -139,7 +139,7 @@ rm(list = ls(all = TRUE))
 
 # set working directory
 setwd("")
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2021.11 DSh workshop - Basics in R/Basics-in-R")
+setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2022.12 DSh workshop - Basics in R/Basics-in-R")
 getwd()
 # Windows: setwd(choose.dir())
 # Linux: tk_choose.files() does same thing - library(tcltk)
@@ -427,7 +427,7 @@ head(OE, 3) # specify number of rows
 # TYPE 1: CSV - comma-separated (text) files
 
 # be sure to set the working directory (or give a full path)
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2021.11 DSh workshop - Basics in R/Basics-in-R")
+setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2022.12 DSh workshop - Basics in R/Basics-in-R")
 
 # load
 shark <- read.csv("SharkAttacks_sample.csv") # based on: https://data.world/shruti-prabhu/shark-attacks
