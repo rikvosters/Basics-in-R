@@ -481,7 +481,6 @@ bb # also tibble
 # Install and load the package called 'datasets'. This package contains a dataset called 'swiss', which contains Swiss fertility and socioeconomic indicators from the year 1888. Save this dataset in your working environment as a new dataframe called 'helvetica', and explore it by looking at the first 10 rows. Now extract the rows only for those districts where more than 50% of the population is catholic, and calculate the mean fertility rate for these predominantly catholic districts. Now compare it to the mean fertility rate of districts with 50% of catholics or less.
 
 
-
 ### 3.4 An alternative approach: tidyverse/dplyr -----
 
 # new kid on the block: tidyverse (tidyverse.org)
