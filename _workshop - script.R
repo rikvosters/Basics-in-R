@@ -626,7 +626,7 @@ babynames %>%
 # - Check if more shark attacks occurred in the 10 years before the movie Jaws came out in 1975, compared to 10 years after Jaws.
 # - How old was the oldest Australian every to die from a shark attack?
 # - Extract the names of all New Zealand victims of shark attacks in the 20th century, under the age of 16.
-read.csv("", sep = "\t", quote = "")
+read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/SharkAttacks.csv", sep = "\t", quote = "")
 
 
 ### 3.5 Other types of data structures -----

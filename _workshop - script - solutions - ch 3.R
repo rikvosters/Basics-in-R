@@ -8,6 +8,7 @@ lego <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/maste
 
 # first six rows
 head(lego)
+lego[1:6,]
 
 # histogram
 hist(lego$year)
@@ -34,8 +35,8 @@ head(neg)
 table(neg$Negation)
 
 # subset SOV v SVO
-table(neg$Negation[neg$WordOrder == "SOV"])
 table(neg$Negation[neg$WordOrder == "SVO"])
+table(neg$Negation[neg$WordOrder == "SOV"])
 
 # tip (cf. later)
 table(neg$Negation, neg$WordOrder)
@@ -51,6 +52,7 @@ helvetica <- swiss
 
 # first ten rows
 head(helvetica, 10)
+helvetica[1:10,]
 
 # rows for districts where Catholic > 50
 helvetica[helvetica$Catholic > 50,]
@@ -100,7 +102,7 @@ shark %>%
   filter(Country == "AUSTRALIA") %>% 
   arrange(desc(Age)) %>% 
   select(Age) %>% 
-  head(1)
+  head(1) # alternative: using max()
 
 # base package alternative:
 max(shark$Age[shark$Fatal == "Y" & shark$Country == "AUSTRALIA"], na.rm = T)
