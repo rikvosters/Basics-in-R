@@ -211,7 +211,7 @@ vecky
 # subsetting - access one specific element of that vector
 vecky[1]
 vecky[1:3]
-vecky[c(2, 3)]
+vecky[c(2, 5)]
 
 # generating vectors
 1:35
@@ -394,7 +394,10 @@ OE$Scribe
 OE$Reaction_time
 
 OE[, 1:3] # what will we get here?
-OE[3:6, 1:2] # and here?
+OE[3:6, 1] # and here?
+
+OE[3:6,]$Scribe
+OE$Scribe[3:6]
 
 # Functions: Functions operating on vectors also work on columns/factors in a data frame
 
@@ -414,7 +417,7 @@ OE[OE$Reaction_time > 25, ] # Subset the dataframe OE with all the entries
 OE[OE$Scribe != "Roderick", ]
 OE[OE$Reaction_time > 25 & OE$Pronunciation == "/r/", ]
 
-# head()
+# head() # cf. tail()
 
 # see only first 6 rows
 head(OE) # identical as OE[1:6,]
