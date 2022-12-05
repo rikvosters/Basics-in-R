@@ -475,6 +475,8 @@ bb # also tibble
 
 # Load a dataset called 'negation.csv' (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/negation.csv). It contains an entry for each linguistic expression of negation in a corpus of early 19th century Flemish soldiers' letters. Negation either occur with a 'Single' negator, or as 'Bipartite' negation (i.e. with two negators). First use table() to check out what the distribution of Single versus Bipartite negation tokens is. Then work with a subset to find out if either form of negation occurs more often in main clauses with a SVO word order (Subject-Verb-Object), compared to subclauses with a SOV order (Subject-Object-Verb).
 
+# alternative (if package is not available for your version of R)
+helvetica <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/swiss.csv")
 
 #### --- | exercise: catholic fertility ---#### 
 
