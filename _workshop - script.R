@@ -139,7 +139,7 @@ rm(list = ls(all = TRUE))
 
 # set working directory
 setwd("")
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2022.12 DSh workshop - Basics in R/Basics-in-R")
+setwd("~/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2022.12 DSh workshop - Basics in R/Basics-in-R")
 getwd()
 # Windows: setwd(choose.dir())
 # Linux: tk_choose.files() does same thing - library(tcltk)
