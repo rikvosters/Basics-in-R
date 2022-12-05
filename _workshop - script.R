@@ -3,7 +3,7 @@
 ###    Workshop: Basics in R for people who are afraid of computers     ###
 ###                  DSh - VUB - December 2022                          ###
 ###             Rik Vosters - Vrije Universiteit Brussel                ###
-###             Rik.Vosters@vub.ac.be | www.rikvosters.be               ###
+###             Rik.Vosters@vub.be | www.rikvosters.be                  ###
 ###                                                                     ###
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
