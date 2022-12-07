@@ -795,8 +795,9 @@ dog_sample <- sample_n(dog, 1000)
 
 #### --- | exercise: dogs of Zuerich ---####
 
-# Reload the Dogs of Zuerich csv file (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv).Recode the 'TYPE_BREED' variable into a new 'SIZE' variable. 'K' stands for 'Kleinwüchsig' and represents small dogs, while 'I' and 'II' stand for 'Rassentypenliste I' and 'II', representing larger dogs. Check the proportion of small versus large dogs in Zurich, and check if women are more likely to have small dogs than men. Finally, if you have to buy a dog for your 85 year old grandmother, what specific breed would have the highest probability of her liking it, given her age and gender?
+# Reload the Dogs of Zuerich csv file (https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv). Recode the 'TYPE_BREED' variable into a new 'SIZE' variable. 'K' stands for 'Kleinwüchsig' and represents small dogs, while 'I' and 'II' stand for 'Rassentypenliste I' and 'II', representing larger dogs. Check the proportion of small versus large dogs in Zurich, and check if women are more likely to have small dogs than men. Finally, if you have to buy a dog for your 85 year old grandmother, what specific breed would have the highest probability of her liking it, given her age and gender?
 
+dog <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DogsOfZuerich.csv", sep=";", na.strings = "")
 
 ### 4.3 Long and wide data -----
 
@@ -818,7 +819,9 @@ pop
 # so that we can e.g. filter(Year == ...) (which is now not possible, as these are columns and not rows)
 
 pop %>%
-  pivot_longer(cols = `1960`:`2015`, names_to = "Year", values_to = "Population") -> popl
+  pivot_longer(cols = `1960`:`2015`, 
+               names_to = "Year", 
+               values_to = "Population") -> popl
 
 popl$Year <- as.numeric(popl$Year)
 popl
@@ -906,7 +909,7 @@ data.files <- list.files(pattern="text_loop")
 # often you can use: pattern="txt"
 data.files
 
-# also, already created an empty character vector into which the whole data file will be loaded
+# also, already created an empty data frame into which the data files will be loaded
 data <- data.frame()
 
 # start the loop
@@ -936,6 +939,8 @@ df
 
 # Tip for plotting:
 # ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
+# and:
+# ggplot(aes(x = Year, y = AgeAdjustedDeathRate, col = LeadingCauses)) + geom_line()
 
 
 #### --- | exercise: metal ---####

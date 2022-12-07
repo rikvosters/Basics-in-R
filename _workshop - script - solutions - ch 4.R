@@ -7,6 +7,7 @@ dog <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master
 dog$TYPE_BREED <- as.factor(dog$TYPE_BREED)
 levels(dog$TYPE_BREED)
 dog$SIZE <- fct_recode(dog$TYPE_BREED, "Small" = "K", "Large" = "I", "Large" = "II")
+levels(dog$SIZE)
 dog$SIZE <- fct_relevel(dog$SIZE, "Small")
 
 # proportion
@@ -14,7 +15,7 @@ table(dog$SIZE)
 4205/(4205+2601)*100
 # alternatives:
 table(dog$SIZE)[1]/(table(dog$SIZE)[1]+table(dog$SIZE)[2])*100
-prop.table(table(dog$SIZE))
+prop.table(table(dog$SIZE))*100
 
 # comparison women v men
 table(dog$SIZE, dog$OWNER_SEX) # easiest
@@ -24,8 +25,7 @@ table(dog$SIZE[dog$OWNER_SEX=="w"])
 table(dog$SIZE[dog$OWNER_SEX=="m"])
 1168/(1168+990)*100 # men are less likely to have small dogs than women
 # alternative:
-prop.table(table(dog$SIZE[dog$OWNER_SEX=="w"]))
-prop.table(table(dog$SIZE[dog$OWNER_SEX=="m"]))
+prop.table(table(dog$SIZE, dog$OWNER_SEX),2) # easiest; 2 = column totals
 
 # dog breed for 85 year old grandmother
 sort(table(dog$BREED[dog$OWNER_SEX == "w" & dog$OWNER_AGE == "81-90"]))
@@ -38,7 +38,7 @@ dog %>%
   select(BREED) %>% 
   table() %>% 
   sort(decreasing = T) %>% 
-  head(1)
+  head(3)
 
 
 ####--- | solution: multiplication tables ---#####
@@ -52,7 +52,7 @@ for (i in 1:50){  # set counter i
 
 rm(list=ls(all=TRUE))
 
-data.files <- list.files(pattern="freqtabel"); data.files # ! freqtabel_oef_cgn.txt -- data.files <- data.files[c(1,3)]
+data.files <- list.files(pattern="freqtabel"); data.files # 
 data <- data.frame()
 for (i in 1:length(data.files)) {
   current.file <- read.csv(data.files[i])
@@ -82,6 +82,14 @@ dth
 dth %>% 
   filter(LeadingCauses == "Influenza and Pneumonia") %>% 
   ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
+
+# similar plot comparing the death rates per year for all of the major causes of death
+dth %>% 
+  ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
+# or better:
+dth %>% 
+  ggplot(aes(x = Year, y = AgeAdjustedDeathRate, col = LeadingCauses)) + 
+  geom_line()
 
 ####--- | solution: metal ---####
 
