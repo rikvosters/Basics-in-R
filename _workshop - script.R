@@ -804,9 +804,7 @@ dog_sample <- sample_n(dog, 1000)
 
 # let's load a new data set, with population data of some countries from 1960 to 2015
 pop <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/world_population_wide.csv",
-  sep = ",",
-  check.names = F
-)
+  sep = ",", check.names = F)
 pop <- tibble(pop)
 
 # we need another package from the Tidyverse, which is not part of the main 'tidyverse' library
@@ -897,6 +895,8 @@ for (i in 1:50) { # define counter 'i' and iterate from 1 till 20
 
 # Use a for-loop that will generate the result of the multiplication tables of 7 (i.e. 7x1=7, 7x2=14, 7x3=21, …, 7x50=350). First set a counter which is the number (going from 1 to 50) you use to multiply with 7, and then calculate a variable x with the result of the multiplication. Show each result for 'x' on your screen using the 'print()' function.
 
+
+### .....  Loading multiple files (cont'd)-----
 
 # loop to load various files
 
