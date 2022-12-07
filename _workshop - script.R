@@ -30,7 +30,7 @@
 # 5.4 Lemmatizing and POS tagging
 # 5.5 Frequency lists
 # 5.6 Keyness and word clouds
-# 5.7 Concordances and collocations
+# 5.7 Concordances
 # 6. DATA EXPLORATION AND VISUALIZATION
 # 6.1 Preparation
 # 6.2 Numerically summarizing - base package

@@ -76,10 +76,10 @@ stoplist <- c("sample", "file", "ced")
 corpus.ced <- corpus.ced[!corpus.ced %in% stoplist]
 
 # freq table
-freq_ced <- sort(table(corpus.ced), decreasing=T)[1:25]
-freq_ced
-write.table(freqtabel_oef, file="freqtabel_oef_cgn.txt", sep="\t", quote=FALSE, col.names=F, row.names=T)
-write_xlsx(as.data.frame(freq_ced), "freqtabel_oef_cgn.xlsx")
+freq_ced <- sort(table(corpus.ced), decreasing=T)
+head(freq_ced, 25)
+write.table(freqtabel_oef, file="fr_table_dialogues.txt", sep="\t", quote=FALSE, col.names=F, row.names=T)
+write_xlsx(as.data.frame(freq_ced), "fr_table_dialogues.xlsx")
 
 # barplot
 barplot(freq_ced, main="Most frequent words - CED", ylab="Absolute frequency", ylim=c(0,360), las=2, cex.names = 0.7)
@@ -88,7 +88,7 @@ barplot(freq_ced, main="Most frequent words - CED", ylab="Absolute frequency", y
 ####--- | solution: Dickens  ---####
 
 # load file
-cities <- scan(file="Dickens-TwoCities.txt", what=character(0), quote="")
+cities <- scan(file="Dickens-TwoCities.txt", what=character(0), quote="", encoding = "utf8")
 head(cities, 25)
 
 # load punctuation.remover
@@ -112,6 +112,7 @@ head(frequencies, 20)
 
 # export as XLSX
 frequencies <- as.data.frame(frequencies)
+library(writexl)
 write_xlsx(frequencies, path = "freqlist_dickens.xlsx")
 
 
