@@ -637,7 +637,7 @@ matrix(1:20, nrow = 5, ncol = 4)
 # list
 names <- c("Samwise", "Meriadoc", "Peregrin", "Gimli", "Legolas")
 hobbit <- c(TRUE, TRUE, TRUE, FALSE, FALSE)
-age <- c(38, 36, 28, 139, 572)
+age <- c(38, 36, 28, 139, 572, 6782, 18)
 
 # compare
 data.frame(names, hobbit, age)
@@ -656,6 +656,9 @@ sample_list[[2]][1]
 
 # empty workspace
 rm(list = ls(all = TRUE))
+
+# load packages 
+library(tidyverse)
 
 # New dataset: Dogs of Zuerich (https://www.kaggle.com/kmader/dogs-of-zurich)
 # Data about Dog Owners in Zuerich, Switzerland
@@ -685,7 +688,7 @@ dog$OWNER_SEX
 # cf. as.numeric(), as.character(), etc.
 
 # fyi: convert all character vectors in dataframe to factors:
-# df %>% mutate_if(is.character, as.factor) -> df
+# dog %>% mutate_if(is.character, as.factor) -> dog
 
 # levels
 levels(dog$OWNER_SEX)
@@ -703,7 +706,7 @@ barplot(table(dog$OWNER_SEX))
 
 # alternative (even easier):
 fct_relevel(dog$OWNER_SEX, "w", "m")
-fct_relevel(dog$OWNER_SEX, "w")
+dog$OWNER_SEX <- fct_relevel(dog$OWNER_SEX, "w")
 
 # rename factor levels: fct_recode()
 
@@ -711,7 +714,7 @@ dog$OWNER_SEX <- fct_recode(dog$OWNER_SEX, "female" = "w", "male" = "m") # new =
 dog$OWNER_SEX
 
 dog$OWNER_AGE <- as.factor(dog$OWNER_AGE)
-levels(dog$OWNER_AGE) # problem: Excell made '11-20' into '44136' (thinking it was a date)
+levels(dog$OWNER_AGE) # problem: Excel made '11-20' into '44136' (thinking it was a date)
 dog$OWNER_AGE <- fct_recode(dog$OWNER_AGE, "11-20" = "44136")
 levels(dog$OWNER_AGE) # solved (but reorder needed!)
 dog$OWNER_AGE <- fct_relevel(dog$OWNER_AGE, "11-20") # no need to list the rest
@@ -744,14 +747,14 @@ table(dog$BREED)
 
 table(dog$BIRTHYEAR)
 dog %>%
-  mutate(AGE = 2016 - dog$BIRTHYEAR) -> dog
+  mutate(AGE = 2016 - BIRTHYEAR) -> dog
 table(dog$AGE)
 
 table(dog$BIRTHYEAR)
 dog$AGE <- 2016 - dog$BIRTHYEAR
 table(dog$AGE) # dogs 36 and 54 years old ≠ possible!
 
-# remove outliers: filter()
+# remove extreme or unlikely values: filter()
 
 dog %>%
   filter(AGE < 30) -> dog

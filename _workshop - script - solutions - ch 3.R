@@ -71,6 +71,7 @@ mean(helvetica_heretica$Fertility)
 ####--- | solution: shark attacks ---####
 
 # load and explore
+library(tidyverse)
 shark <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/SharkAttacks.csv", sep="\t", quote="") 
 shark
 
@@ -85,16 +86,19 @@ length(shark$Name[shark$Year == 2017 & shark$Fatal == "Y"])
 
 # check before and after Jaws (1975)
 shark %>% 
-  filter(Year < 1975 & Year > 1965) %>% 
-  tally()
+  filter(Year < 1975) %>% 
+  filter(Year >= 1965) %>% 
+  tally() -> before75
 
 shark %>% 
-  filter(Year > 1975 & Year < 1985) %>% 
-  tally()
+  filter(Year > 1975 & Year <= 1985) %>% 
+  tally() -> after75
+
+before75-after75 # less attacks
 
 # base package alternative:
-length(shark$Name[shark$Year < 1975 & shark$Year > 1965])
-length(shark$Name[shark$Year > 1975 & shark$Year < 1985])
+length(shark$Name[shark$Year < 1975 & shark$Year >= 1965])
+length(shark$Name[shark$Year > 1975 & shark$Year <= 1985])
 
 # oldest Australian to die
 shark %>% 
@@ -103,6 +107,12 @@ shark %>%
   arrange(desc(Age)) %>% 
   select(Age) %>% 
   head(1) # alternative: using max()
+
+shark %>% 
+  filter(Fatal == "Y") %>% 
+  filter(Country == "AUSTRALIA") %>% 
+  select(Age) %>% 
+  max(na.rm = TRUE)
 
 # base package alternative:
 max(shark$Age[shark$Fatal == "Y" & shark$Country == "AUSTRALIA"], na.rm = T)
@@ -116,5 +126,5 @@ shark %>%
   select(Name)
 
 # base package alternative:
-shark$Name[shark$Age < 16 & shark$Year > 1900 & shark$Country == "NEW ZEALAND"]
-unique(shark$Name[shark$Age < 16 & shark$Year > 1900 & shark$Country == "NEW ZEALAND"])
+shark$Name[shark$Age < 16 & shark$Year > 1900 & shark$Year <= 2000 & shark$Country == "NEW ZEALAND"]
+unique(shark$Name[shark$Age < 16 & shark$Year > 1900 & shark$Year <= 2000 & shark$Country == "NEW ZEALAND"])
