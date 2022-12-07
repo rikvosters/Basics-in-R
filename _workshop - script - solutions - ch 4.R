@@ -97,11 +97,11 @@ library(readxl)
 
 # load 'metal_data'
 metal_data <- read_excel("metal_data.xlsx")
-metal_data
+head(metal_data)
 
 # load 'metal_meta'
 metal_meta <- read_excel("metal_meta.xlsx")
-metal_meta
+head(metal_meta)
 
 # merge
 metal <- merge(metal_data, metal_meta, by = "ID")
@@ -112,14 +112,14 @@ head(metal)
 metal %>% 
   filter(origin == "Iran") %>% 
   filter(is.na(split)) %>% 
-  arrange(formed) %>% 
+  arrange(formed) %>%  # select(name) %>% 
   head(1)
 
 # Mexican death metal bands
-metal$style <- tolower(metal$st)
+metal$style <- tolower(metal$style)
 metal %>% 
   filter(origin == "Mexico") %>% 
-  filter(str_detect(style, "death"))
+  filter(str_detect(style, "death")) # filter(style == "death") 
 
 # Mexican death metal fan base
 metal %>% 
