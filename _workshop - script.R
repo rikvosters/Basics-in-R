@@ -971,7 +971,7 @@ corpus.file.lower.words <- scan(file = "https://raw.githubusercontent.com/rikvos
 
 # per line (sep = "\n")
 corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")
-corpus.file
+head(corpus.file, 100)
 
 # alternatively:
 # corpus.file <- scan(file=choose.files(), what=character(0), sep="\n")
@@ -1132,20 +1132,22 @@ udmodel <- udpipe_download_model(language = "english")
 witch_POS <- udpipe(witch, object = udmodel)
 witch_POS
 
+# filter out nouns
 witch_POS %>%
-  select(token_id, token, lemma, upos)
+  select(token_id, token, lemma, upos) %>% 
+  filter(upos == "NOUN")
 
 # also for other languages:
-udmodel <- ?udpipe_download_model(language = "dutch")
+udmodel <- udpipe_download_model(language = "dutch")
 NL <- udpipe("De regering besliste in juni om alle inwoners gratis treinritten aan te bieden", "dutch")
 NL
-udmodel <- udpipe_download_model(language = "dutch")
+
 NL %>%
   select(token_id, token, lemma, upos)
 
 ### 5.5 Frequency lists -----
 
-# example: inaugual addresses last two US presidents
+# example: inaugual addresses two US presidents
 
 # load both corpora, convert to lower case
 obama <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/speech-obama.txt", 
