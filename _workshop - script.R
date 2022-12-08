@@ -2151,7 +2151,6 @@ sample %>%
 
 # Based on Gries' 2013 - Statistics for Linguistics with R
 
-
 ### 7.1 Distributions -----
 
 # Shapiro Wilk Test: check for normal distribution
