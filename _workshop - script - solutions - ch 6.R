@@ -6,7 +6,7 @@ head(dth)
 
 # wide to long
 dth %>% 
-  pivot_longer(cols = `1900`:`2013`, names_to = "Year", values_to = "AgeAdjustedDeathRate") -> dth
+  pivot_longer(cols = `1900`:`2013`, names_to = "Year", values_to = "AgeAdjustedDeathRate") -> dth_long
 
 # make year numeric
 dth$Year <- as.numeric(dth$Year)
@@ -122,7 +122,8 @@ df %>%
 # 3. smoother growth in student numbers per university per year
 df %>% 
   group_by(University, Year) %>% 
-  summarise(N = sum(Students)) %>% 
+  summarise(N = sum(Students)) -> toplot
+toplot %>% 
   ggplot(aes(x = Year, y = N, col = University)) +
   geom_smooth(se = F) +
   scale_x_continuous(breaks=2010:2019, labels=2010:2019)
