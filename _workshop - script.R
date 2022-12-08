@@ -1535,7 +1535,7 @@ tt <- as_tibble(tt)
 tt
 
 # Let's rename the untransparent letters of the port where they embarked
-tt$Embarked <- fct_recode(tt$Embarked, "Cherbourg (FR)" = "C", "Queenstown (IR)" = "Q", "Southampton (EN)" = "S")
+tt$Embarked <- fct_recode(tt$Embarked, "Cherbourg (FR)" = "C", "Queenstown (IR)" = "Q", "Southampton (EN)" = "S") # new = old
 tt
 
 # Have a first look at the dataset
@@ -1543,12 +1543,17 @@ tt
 str(tt)
 summary(tt)
 
-# Oops, we forgot to make Survived and Class into factors
+# Oops, we forgot to make Survived, Sex and Class into factors
 class(tt$Survived)
 class(tt$Class)
 tt$Survived <- as.factor(tt$Survived)
 tt$Class <- as.factor(tt$Class)
 tt$Sex <- as.factor(tt$Sex)
+
+# Alternative: convert all character vectors to factors
+# tt <- tt %>% mutate_if(is.character, as.factor)
+# summary(tt)
+
 # Check order of factor levels
 levels(tt$Embarked)
 levels(tt$Class)
@@ -1618,6 +1623,7 @@ write_xlsx(x = as.data.frame(surv_prop), path = "surv_prop.xlsx")
 
 # table with absolute freqs
 table(tt$Survived, tt$Sex) # 2 dimensions
+tapply(tt$Survived, tt$Sex, table)
 
 # row and column totals
 addmargins(table(tt$Survived, tt$Sex))
@@ -1640,7 +1646,8 @@ mytable <- function(dv, iv) {
 mytable(tt$Survived, tt$Sex)
 
 # add more independent variables?
-table(tt$Class, tt$Sex, tt$Survived) 
+table(tt$Class, tt$Sex, tt$Survived) # DV last
+ftable(tt$Survived, tt$Class, tt$Sex) # same, but DV first
 round(prop.table(ftable(tt$Class, tt$Sex, tt$Survived) , 1), 2)
 
 # ASIDE: FROM NUMERIC TO CATEGORICAL - BINNING
@@ -1759,7 +1766,7 @@ plot(tt$Survived ~ tt$Class)
 
 # add legend
 barplot(prop.table(table(tt$Survived, tt$Class), 2)*100, col = c("darkgreen", "darkolivegreen3"))
-legend("top", legend=c("Deceased", "Survived"), ncol=2, fill=c("darkgreen", "darkolivegreen3"), cex=0.75)
+legend("top", legend=c("Deceased", "Survived"), ncol=1, fill=c("darkgreen", "darkolivegreen3"), cex=0.5)
 # where: either x and y coordinates, 
 #        or: "bottomright", "bottom", "bottomleft", "left", "topleft", "top", "topright", "right", "center"
 # what to write as a legend (legend=)
@@ -1776,7 +1783,7 @@ boxplot(tt$Fare ~ tt$Embarked)
 boxplot(tt$Fare ~ tt$Embarked, ylim = c(0,200))
 
 # notches
-boxplot(tt$Fare ~ tt$Embarked, ylim = c(0,200), notch = T)
+boxplot(tt$Fare ~ tt$Embarked, ylim = c(0,150), notch = T)
 
 # with some more options
 par(mar=c(7,4.1,4.1,2.1))
@@ -1866,7 +1873,7 @@ tt %>%
   group_by(Embarked) %>% 
   summarise(mean_fare = mean(Fare),
             number_passengers = n()) %>% 
-  mutate(perc_passengers = number_passengers/sum(number_passengers)*100)  
+  mutate(perc_passengers = number_passengers/sum(number_passengers)*100)
 
 # useful function to use with summarise: rank()
 tt %>% 
@@ -1908,14 +1915,13 @@ tt %>%
   filter(Class == "1") %>% 
   ggplot(aes(x = Age, y = Fare)) +
   geom_point() +
-  geom_smooth(method = "lm") # see: ?geom_smooth: lm, loess, gam, ...
+  geom_smooth(method = "loess") # see: ?geom_smooth: lm, loess, gam, ...
 
 tt %>% 
   filter(Class == "1") %>% 
-  ggplot(aes(x = Age, y = Fare)) +
+  ggplot(aes(x = Age, y = Fare, label = Name)) +
   geom_point() +
-  geom_label(aes(label = Name, hjust = 0, vjust = 0))
-
+  geom_label(aes(hjust = 0, vjust = 0))
 
 tt %>% 
   filter(Class == "1") %>% 
@@ -1929,7 +1935,7 @@ tt %>%
   ggplot(aes(x = Age, y = Fare)) +
   geom_point() +
   geom_smooth(method = "lm") 
-ggsave("graph.pdf", device = "pdf", width = 9, height = 6)
+ggsave("graph.pdf", device = "pdf", width = 6, height = 4)
 
 # themes
 
@@ -1938,7 +1944,7 @@ tt %>%
   ggplot(aes(x = Age, y = Fare)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  theme_bw() # google ggplot themes
+  theme_minimal() # google ggplot themes
 
 # HISTOGRAMS, QQPLOTS AND DENSITY PLOTS
 
@@ -2022,7 +2028,7 @@ tt %>%
   summarise(mean_fare = mean(Fare)) %>% 
   ggplot(aes(x = Embarked, y = mean_fare)) +
   geom_bar(stat="identity", fill = "darkolivegreen4") + # color
-  geom_text(aes(label = round(mean_fare,1)), vjust = -0.5) # add text
+  geom_text(aes(label = round(mean_fare,1)), vjust = 1.5) # add text
 
 
 # add extra aesthetic 
@@ -2071,7 +2077,7 @@ tt %>%
   ggplot(aes(x = Embarked, y = mean_fare, fill = Survived)) +
   geom_bar(stat="identity") +
   scale_fill_discrete(name="Survived?",labels = c("No", "Yes"))
-
+  # color brewer/ paletteer
 
 # BOXPLOTS
 
@@ -2096,7 +2102,8 @@ tt %>%
 
 tt %>% 
   ggplot(aes(x = Survived, y = Age)) +
-  geom_violin(fill="gold") 
+  geom_violin(fill="gold") +
+  geom_boxplot()
 
 # MOSAIC PLOTS
 
@@ -2122,7 +2129,7 @@ sample %>%
 
 ####--- | exercise: flights ---####
 
-# Install and load the 'hflights' package, and then assign the element 'hflight' to a new dataframe of your choice. Also convert it into a tibble, and then select the variables Year, DayOfWeek, DepTime, UniqueCarrier, AirTime, ArrDelay, Dest, Distance, Cancelled, and CancellationCode, removing the others. Now, try to explore yoru data to answer the following questions:
+# Install and load the 'hflights' package, and then assign the element 'hflights' to a new dataframe of your choice. Also convert it into a tibble, and then select the variables Year, DayOfWeek, DepTime, UniqueCarrier, AirTime, ArrDelay, Dest, Distance, Cancelled, and CancellationCode, removing the others. Now, try to explore your data to answer the following questions:
 # Which percentage of flights was cancelled in 2011? Visualize in a barplot.
 # Calculate the percentage of flights cancelled versus the percentage of flights not cancelled, and visualize this in a simple barplot.
 # Recode CancellationCode ("carrier" = "A", "weather" = "B", "FFA" = "C", "security" = "D") and use it to find out what the major cause of flight cancellations is.
