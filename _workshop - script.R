@@ -1,7 +1,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 ###                                                                     ###
 ###    Workshop: Basics in R for people who are afraid of computers     ###
-###                  DSh - VUB - December 2022                          ###
+###                     DSh - VUB - May 2024                            ###
 ###             Rik Vosters - Vrije Universiteit Brussel                ###
 ###             Rik.Vosters@vub.be | www.rikvosters.be                  ###
 ###                                                                     ###
@@ -139,7 +139,7 @@ rm(list = ls(all = TRUE))
 
 # set working directory
 setwd("")
-setwd("~/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2022.12 DSh workshop - Basics in R/Basics-in-R")
+setwd("~/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2024.05 DSh workshop - Basics in R/Basics-in-R")
 getwd()
 # Windows: setwd(choose.dir())
 # Linux: tk_choose.files() does same thing - library(tcltk)
@@ -149,15 +149,15 @@ getwd()
 # Working with packages
 
 # first, once:
-install.packages("stylo")
+install.packages("tidyverse")
 
 # then, every session before using it or at the beginning of the script:
-library(stylo)
+library(tidyverse)
 
 # want to know more about the package?
-help(package = stylo) # or write in 'Help' window
+help(package = tidyverse) # or write in 'Help' window
 
-install.packages("tidyverse") # once
+# install.packages("tidyverse") # once
 library(tidyverse)
 
 # alternatively:
@@ -430,7 +430,7 @@ head(OE, 3) # specify number of rows
 # TYPE 1: CSV - comma-separated (text) files
 
 # be sure to set the working directory (or give a full path)
-setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2022.12 DSh workshop - Basics in R/Basics-in-R")
+setwd("/Users/rikvosters/Dropbox/@ Documenten/Colleges - courses/_Gastcolleges/2024.05 DSh workshop - Basics in R/Basics-in-R")
 
 # load
 shark <- read.csv("SharkAttacks_sample.csv") # based on: https://data.world/shruti-prabhu/shark-attacks
@@ -1516,7 +1516,9 @@ exact.matches("half", corpus, characters.around = 10)[[4]]
 ### 6. DATA EXPLORATION AND VISUALIZATION -----
 
 
-### 6.1 Preparation -----
+### 6.1 Preparation and visualization basics -----
+
+# visualization basics: see slides
 
 # load packages
 library(tidyverse)
