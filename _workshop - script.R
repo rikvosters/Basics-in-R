@@ -211,7 +211,7 @@ vecky
 
 # subsetting - access one specific element of that vector
 vecky[1]
-vecky[1:3]
+vecky[2:5]
 vecky[c(2, 5)]
 
 # generating vectors
@@ -222,9 +222,9 @@ rep(1:4, 3)
 rep("abc", 3) # also for non-numerical vectors, cf. below
 
 # some more data
-wordcounts <- rnorm(100, mean = 180, sd = 40) # Generate normally distributed
-# data with a standard deviation
-# of 40 around a mean score of 100
+wordcounts <- rnorm(100, mean = 180, sd = 40) # Generate 100 normally distributed
+# data points with a standard deviation
+# of 40 around a mean score of 180
 wordcounts
 
 # round
