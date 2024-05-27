@@ -50,14 +50,14 @@
 
 # Type things in script and send to console
 
-"hello world"
+# "hello world"
 print("hello world")
 
 # Basic functions in R: addition, subtraction, etc.
 
 2 + 7
 2 * 7
-2 + 7
+2 + 9
 
 # Notice how anything behind the hash is a comment and is not processed
 
@@ -69,7 +69,7 @@ print("hello world")
 
 a <- 2 + 7 # assign  (pro tip Mac: OPTION + '-')
 # cf. 'Environment' window
-a
+a 
 
 # Alternative:
 
@@ -80,6 +80,7 @@ a = 2 + 7
 a - 3
 a <- a - 3 # overwrite
 a
+a <- a - 3; a # overwrite and display result
 
 10 * a + (1 / 3 * a)
 
@@ -120,9 +121,9 @@ barplot(means_to_plot)
 
 # middle ground
 means_to_plot <- c(mean(b), mean(c))
-barplot(means_to_plot)
+barplot(means_to_plot) 
 
-# Pro tip: use 'TAB'
+# Pro tip: use 'TAB' to autocomplete
 
 # Typical structure of a function:
 # function(x, y, option=FALSE)
