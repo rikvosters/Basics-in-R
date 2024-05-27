@@ -267,7 +267,7 @@ wordcounts[wordcounts >= 200]
 #     ==  Equal to
 #     !=  Unequal to
 #  is.na  Has missing values (NA)
-# !is.ba  Does not have missing values (not NA)
+# !is.na  Does not have missing values (not NA)
 
 wordcounts[wordcounts != 210]
 wordcounts[wordcounts >= 210]
