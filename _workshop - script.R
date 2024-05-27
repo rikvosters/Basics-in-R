@@ -529,7 +529,7 @@ plot(sort(wordcounts))
 round(mean(babynames$n))
 # is the same as:
 babynames$n %>% # CTRL/CMD + SHIFT + M
-  mean() %>%
+  mean()  %>% 
   round()
 
 # 3. 'Plying' your data (dplyr)
