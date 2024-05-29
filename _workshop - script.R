@@ -873,6 +873,7 @@ head(meta) # look for shared identifier (here: Letter)
 
 # merge
 neg <- merge(neg, meta, by = "Letter") # first the two elements which to merge, then by="" (= the column used for merging)
+# same, part of tidyverse package: left_join(), right_join(), full_join()
 
 # check
 head(neg) # success!
