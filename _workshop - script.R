@@ -942,7 +942,9 @@ df
 # Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Use the option `check.names = F` when loading the data with `read.csv` to tell R to load the year numbers as they appear (and not convert them by putting an `X` in front of them). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this. Finally, make a similar plot comparing the death rates per year for all of the major causes of death in the dataset. Save the last plot as a pdf.
 
 # Tip for plotting:
-# ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
+# 
+deathrates %>% 
+  ggplot(aes(x = Year, y = AgeAdjustedDeathRate)) + geom_line()
 # and:
 # ggplot(aes(x = Year, y = AgeAdjustedDeathRate, col = LeadingCauses)) + geom_line()
 
@@ -972,7 +974,7 @@ rm(list = ls(all = TRUE))
 
 # per word (no specification of 'sep' needed)
 corpus.file.lower.words <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), quote = "")
-
+head(corpus.file.lower.words)
 # per line (sep = "\n")
 corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")
 head(corpus.file, 100)
@@ -987,7 +989,7 @@ head(corpus.file, 100)
 corpus.file.lower <- tolower(scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n")) # opposite: toupper()
 
 # encoding problems:
-# corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n", fileEncoding = "UNICODE-1-1") # argument: fileEncoding=""
+# corpus.file <- scan(file = "https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/Dickens-ChristmasCarol.txt", what = character(0), sep = "\n", fileEncoding = "UNICODE-1-1") # argument: fileEncoding="UTF-8"
 corpus.file
 iconvlist() # all encoding options for platform
 
@@ -1057,14 +1059,21 @@ grepl() # same, but returns a logical vector (see later for subsetting of corpus
 #### --- | exercise: grep ---####
 
 # Write a regex to capture the names of the last four months of the year
+words <- c("July", "September", "October", "November", "December"); words
+grep("REGEX", words, value=T, ignore.case=T)
 
 # Write a regex to search for all historical spelling variants of the Dutch PersPron 'ik', where the <i> can also take the form of <j> or <ij>, and the <k> could also occur as <ck> (but not as <c>). Test it on the words: "ik", "ick", "jk", "jck", "ijck", "Ik", "Ick", "Jk", "Jck", "Ijck", "ic".
+words <- c("ik", "ick", "jk", "jck", "ijck", "Ik", "Ick", "Jk", "Jck", "Ijck", "ic"); words
+grep("REGEX", words, value=T, ignore.case=T)
 
 # Write a regex to capture all words (singular and plural) ending in the suffix -ism. Test it on the words: "fascism", "Bushisms", "antidisestablishmentarianism", "prism".
-vecky <- c("fascism", "Bushisms", "antidisestablishmentarianism", "prism", "cow")
-grep("REGEX", vecky, value=T)
+words <- c("fascism", "Bushisms", "antidisestablishmentarianism", "prism", "cow")
+grep("REGEX", words, value=T)
 
 # Write a regex to capture any word starting in a cluster of three or more consonants and exactly one vowel grapheme. Test it on the words: "spring", "schmuck", "strudel", "scared", "straight".
+words <- c("spring", "schmuck", "strudel", "scared", "straight")
+grep("REGEX", words, value=T)
+
 
 # Gsub 
 
