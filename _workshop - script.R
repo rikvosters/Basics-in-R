@@ -1140,7 +1140,7 @@ gsub("John\\b", "Bill", words, perl = T) # better!
 
 ### 5.4 Lemmatizing and POS tagging -----
 
-library(udpipe)
+library(udpipe); library(tidymodels)
 udmodel <- udpipe_download_model(language = "english")
 witch_POS <- udpipe(witch, object = udmodel)
 witch_POS
@@ -1222,7 +1222,9 @@ freq.trump <- sort(table(trump), decreasing = T)
 ## List all characters in a corpus (Gries 2009)
 
 # cf. above
-table(unlist(strsplit(obama, "")))
+my_own_function <- function(obama) {
+  table(unlist(strsplit(obama, "")))
+}
 
 # Menu: 'Code' > 'Extract function'…
 
@@ -1263,7 +1265,7 @@ stoplist
 stoplist <- c(stoplist, "–", "-")
 
 # also for other languages:
-stopwords(language = "nl", source = "stopwords-iso")
+stopwords(language = "de", source = "stopwords-iso")
 
 # new corpus using stoplist
 obama <- obama[!obama %in% stoplist]
@@ -1280,7 +1282,7 @@ freq.trump <- sort(table(trump), decreasing = T)
 head(freq.trump, 10)
 
 # compare:
-freq.obama[1:10]
+freq.obama[1:100]
 freq.trump[1:10]
 
 # graph
@@ -1360,8 +1362,8 @@ freq.table <- table(words, corpora)
 result <- as.data.frame.matrix(freq.table)
 
 # explore
-tail(result, 20)
-
+head(result, 50)
+result[90:100,]
 # CHI SQUARE TESTS
 
 # package 'corpora' (Evert 2015)
@@ -1566,7 +1568,7 @@ tt$Class <- as.factor(tt$Class)
 tt$Sex <- as.factor(tt$Sex)
 
 # Alternative: convert all character vectors to factors
-# tt <- tt %>% mutate_if(is.character, as.factor)
+# tt %>% mutate_if(is.character, as.factor) -> tt
 # summary(tt)
 
 # Check order of factor levels
@@ -1676,7 +1678,7 @@ cut(tt$Age, breaks = 4)
 cut(tt$Age, breaks = 4, labels = c("adolescent", "young", "middle-aged", "elderly"))
 
 # do it yourself
-cut(tt$Age, breaks = c(0, 18, 30, 50, 100))
+cut(tt$Age, breaks = c(0, 18, 30, 50, 200))
 cut(tt$Age, breaks = c(0, 18, 30, 50, 100), labels = c("adolescent", "young", "middle-aged", "elderly"))
 
 # save/assign
@@ -1693,10 +1695,10 @@ round(prop.table(table(tt$Survived, tt$Age_fct), 2), 3)*100
 
 # visualizing one numeric variable
 
-hist(tt$Fare) # breaks option
+hist(tt$Fare, breaks=30) # breaks option
 
 # cf. also: 
-library(rcompanion)
+library(rcompanion) # install.packages("rcompanion")
 plotNormalHistogram(tt$Fare)
 
 qqnorm(tt$Fare)
@@ -1895,7 +1897,7 @@ tt %>%
   filter(is.na(Age_fct) == FALSE) %>%
   group_by(Age_fct) %>% 
   summarise(mean_fare = mean(Fare)) %>% 
-  mutate(rank_fare = rank(mean_fare))
+  mutate(rank_fare = rank(mean_fare)) -> toplot
 
 ### 6.5 Visualization - tidyverse/ggplot -----
 
@@ -1959,7 +1961,7 @@ tt %>%
   ggplot(aes(x = Age, y = Fare)) +
   geom_point() +
   geom_smooth(method = "lm") +
-  theme_minimal() # google ggplot themes
+  theme_bw() # google ggplot themes
 
 # HISTOGRAMS, QQPLOTS AND DENSITY PLOTS
 
@@ -2005,7 +2007,7 @@ tt %>%
 
 # facets
 
-tt %>% 
+tt %>%  
   ggplot(aes(x = Age, y = Fare)) +
   geom_point() +
   facet_grid(. ~ Class) # facet_grid(Embarked ~ Class)
@@ -2107,6 +2109,9 @@ tt %>%
   scale_y_continuous(limits = c(0,200)) +
   scale_x_discrete(labels = c("1st", "2nd", "3rd"))
 
+
+
+
 # notches
 tt %>% 
   ggplot(aes(x = Sex, y = Fare)) +
@@ -2142,11 +2147,14 @@ sample %>%
 
 # Load a collection on US age-adjusted death rates for selected major causes of death per 100,000 U.S. inhabitants (1900-2013) (source: https://data.world/health/death-rates-for-major-causes), located online ("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv"). Transform it from its current (very) wide format to a long data format. Then, filter out the death rates per year for 'Influenza and Pneumonia', and make an appropriate plot of this using ggplot. Next, calculate the mean death rate per cause of death, and plot this in a barplot, for which you chose a custom theme and an appropriate title plus axis labels. Finally, make a plot comparing the death rates per year for different causes, and save it as a PDF file with the name "death.pdf".
 df <- read.csv("https://raw.githubusercontent.com/rikvosters/Basics-in-R/master/DeathRatesforMajorCauses_wide.csv", check.names = F)
-dth$LeadingCauses)
+
 
 ####--- | exercise: flights ---####
 
 # Install and load the 'hflights' package, and then assign the element 'hflights' to a new dataframe of your choice. Also convert it into a tibble, and then select the variables Year, DayOfWeek, DepTime, UniqueCarrier, AirTime, ArrDelay, Dest, Distance, Cancelled, and CancellationCode, removing the others. Now, try to explore your data to answer the following questions:
+# install.packages("hflights")
+library(hflights)
+df <- hflights
 # Which percentage of flights was cancelled in 2011? Visualize in a barplot.
 # Calculate the percentage of flights cancelled versus the percentage of flights not cancelled, and visualize this in a simple barplot.
 # Recode CancellationCode ("carrier" = "A", "weather" = "B", "FFA" = "C", "security" = "D") and use it to find out what the major cause of flight cancellations is.
